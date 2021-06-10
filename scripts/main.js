@@ -20,7 +20,9 @@ for (let item of accordeonItemsTitles) {
     });
 };
 
-/* Square customization */
+/*** Square customization ***/
+
+/** Top toolbar**/
 
 /* Square color */
 
@@ -37,10 +39,83 @@ squareColor.addEventListener('change', changeSquareColor);
 
 const opacityRange = document.querySelector('#square-opacity');
 const opacityRangeSpan = document.querySelector('#square-opacity+span');
+const squareAnswerOpacitySpan = document.getElementById('answer-square-opasity');
 
 function changeOpacity () {
     square.style.opacity = opacityRange.value;
     opacityRangeSpan.innerHTML = opacityRange.value;
+    squareAnswerOpacitySpan.innerHTML = opacityRange.value;
 };
 
 opacityRange.addEventListener('input', changeOpacity);
+
+/* Square size */
+
+const squareWidthInput = document.getElementById('square-width');
+const squareHeightInput = document.getElementById('square-height');
+const squareAnswerWidthSpan = document.getElementById('answer-square-width');
+const squareAnswerHeightSpan = document.getElementById('answer-square-height');
+
+function changeWidth () {
+    square.style.width = squareWidthInput.value + 'px';
+    squareAnswerWidthSpan.innerHTML = squareWidthInput.value;
+}
+
+function changeHeight () {
+    square.style.height = squareHeightInput.value +'px';
+    squareAnswerHeightSpan.innerHTML = squareHeightInput.value;
+}
+
+squareWidthInput.addEventListener('input', changeWidth);
+squareHeightInput.addEventListener('input', changeHeight);
+
+/** Side toolbar **/
+
+/* Border radius* */
+
+//inputs
+const topLeftRange = document.getElementById('top-left-radius');
+const topRightRange = document.getElementById('top-right-radius');
+const bottomRightRange = document.getElementById('bottom-right-radius');
+const bottomLeftRange = document.getElementById('bottom-left-radius');
+const allRadiusInputs = document.querySelectorAll('.square-border-radius');
+//spans-result
+const topLeftResult = document.getElementById('tl-result');
+const topRightResult = document.getElementById('tr-result');
+const bottomRightResult = document.getElementById('br-result');
+const bottomLeftResult = document.getElementById('bl-result');
+//span-answer
+const borderRadiusAnswer = document.getElementById('square-border-radius');
+
+
+let borderRadius = topLeftRange.value + 'px ' + 
+                   topRightRange.value + 'px ' +
+                   bottomRightRange.value + 'px ' +
+                   bottomLeftRange.value + 'px';
+
+function getRadius () {
+    topLeftResult.innerHTML = topLeftRange.value;
+    topRightResult.innerHTML = topRightRange.value;
+    bottomRightResult.innerHTML = bottomRightRange.value;
+    bottomLeftResult.innerHTML = bottomLeftRange.value;
+
+    square.style.borderRadius = 
+    topLeftRange.value + 'px ' + 
+    topRightRange.value + 'px ' +
+    bottomRightRange.value + 'px ' +
+    bottomLeftRange.value + 'px';
+
+    borderRadiusAnswer.innerHTML = topLeftRange.value + 'px ' + 
+    topRightRange.value + 'px ' +
+    bottomRightRange.value + 'px ' +
+    bottomLeftRange.value + 'px';
+
+
+}  
+
+for (let elem of allRadiusInputs) {
+    elem.addEventListener('input', getRadius)
+}
+
+
+
