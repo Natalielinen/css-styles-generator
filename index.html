@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,23 +9,49 @@
         href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/ranges.css">
     <link rel="stylesheet" href="styles/checkbox.css">
     <title>CSS Styles Generator</title>
 </head>
-
 <body>
     <div class="container">
+
         <!--Main header-->
         <header class="main-header">
             <img class="main-header__logo" src="assets/lotus.png" alt="Logo" width="64" height="64">
             <h1 class="main-header__title">CSS Styles Generator</h1>
-        </header><!--End of main header-->
+        </header>
+        <!--End of main header-->
+
+        <!--Page tools bar-->
+        <div class="page-tools-bar">
+            <p>
+                Choose canvas
+                <select name="figure-trigger" id="figure-trigger">
+                    <option value="figure">Figure</option>
+                    <option value="text">Text</option>                            
+                </select>
+            </p>
+            <p>
+                Choose page style
+                <select name="page-style-trigger" id="page-style-trigger" class="page-style">
+                    <option value="classic">Classic</option>
+                    <option value="other">Other</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            <p class="lang-trigger">
+                <img src="assets/lang.png" alt="ianguage">
+            </p>
+        </div>
+        <!--End of page tools bar-->
 
         <!--Main content-->
-        <main class="main-content">
-            <!--Side tools panel-->
+        <main>
+            <!--Figure canvas-->
+            <div class="main-content figure-canvas">
+                <!--Side tools panel-->
             <div class="main-content__tools-panel">
                 <!--Square accordeon-->
                 <div class="figure-tools accordeon__container">
@@ -183,147 +208,6 @@
                 </div>
                 <!--End of square accordeon-->
 
-                <!--Text accordeon-->
-                <div class="text-tools accordeon__container">
-                    <div class="accordeon__item text-decoration">
-                        <div class="accordeon__item__title">Text decoration</div>
-                        <div class="accordeon__item__content">
-                            <p>
-                                <select name="text decoration" id="">
-                                    <option value="none">none</option>
-                                    <option value="line-through">line-through</option>
-                                    <option value="overline">overline</option>
-                                    <option value="underline">underline</option>
-                                </select>
-                            </p>
-                            <p>
-                                Color 
-                                <input type="color" name="" id="">
-                            </p>
-                            <p>
-                                Style
-                                <select name="text-decoration-style" id="">
-                                    <option value="solid">solid</option>
-                                    <option value="double">double</option>
-                                    <option value="dotted">dotted</option>
-                                    <option value="dashed">dashed</option>
-                                    <option value="wavy">wavy</option>
-                                </select>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__item text-shadow">
-                        <div class="accordeon__item__title">Text shadow</div>
-                        <div class="accordeon__item__content">
-                            <p>
-                                Color 
-                                <input type="color" name="" id="">
-                            </p>
-                            <p>
-                                Offset x<br>
-                                <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
-                            </p>
-                            <p>
-                                Offset y<br>
-                                <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
-                            </p>
-                            <p>
-                                Blur radius<br>
-                                <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
-                            </p>
-                            <p>
-                                Spread radius<br>
-                                <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__item text-transform">
-                        <div class="accordeon__item__title">Text transform</div>
-                        <div class="accordeon__item__content">
-                            <p>
-                                <select name="text transform" id="">
-                                    <option value="none">none</option>
-                                    <option value="capitalize">capitalize</option>
-                                    <option value="uppercase">uppercase</option>
-                                    <option value="lowercase">lowercase</option>
-                                </select>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__item transform">
-                        <div class="accordeon__item__title">Transform</div>
-                        <div class="accordeon__item__content">
-                            <p>
-                                Rotate<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Scale X<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Scale Y<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Scew X<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Scew Y<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Translate X<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Translate Y<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="accordeon__item border-text">
-                        <div class="accordeon__item__title">Border</div>
-                        <div class="accordeon__item__content">
-                            <p>
-                                <input type="checkbox" name="top-text-border" id="top-text-border">
-                                <label for="top-text-border">Top</label>
-                                <input type="checkbox" name="right-text-border" id="right-text-border">
-                                <label for="right-text-border">Right</label>
-                                <input type="checkbox" name="bottom-text-border" id="bottom-text-border">
-                                <label for="bottom-text-border">Bottom</label>
-                                <input type="checkbox" name="left-text-border" id="left-text-border">
-                                <label for="left-text-border">Left</label>
-                                <input type="checkbox" name="all-borders" id="all-borders">
-                                <label for="all-borders">All</label>
-                            </p>
-                            <p>
-                                Border width<br>
-                                <input type="range" name="" id=""><span>0</span>
-                            </p>
-                            <p>
-                                Border style<br>
-                                <select name="border style" id="">
-                                    <option value="dotted">dotted</option>
-                                    <option value="dashed">dashed</option>
-                                    <option value="solid">solid</option>
-                                    <option value="double">double</option>
-                                    <option value="groove">groove</option>
-                                    <option value="ridge">ridge</option>
-                                    <option value="inset">inset</option>
-                                    <option value="outset">outset</option>
-                                </select>
-                            </p>
-                            <p>
-                                Color<br>
-                                <input type="color" name="" id="">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--End of text accordeon-->
-
                 <button class="btn">Apply</button>
                 <button class="btn">Reset</button>
             </div><!--End of side tools panel-->
@@ -332,13 +216,6 @@
             <div class="main-content__canvas">
                 <!--Square top-toolbar-->
                 <div class="main-content__canvas__toolbar square">
-                    <p>
-                        <select name="" id="">
-                            <option value="figure">Figure</option>
-                            <option value="text">Text</option>
-                            
-                        </select>
-                    </p>
                     <p>Color <input type="color" name="" id=""></p>
                     <p>Opacity <input type="number" name="" id="" min="0" max="1"> </p>
                     <p>Size:
@@ -348,46 +225,9 @@
                 </div><!--End of square top-toolbar-->
 
                 <div class="main-content__canvas__square"></div>
-                
-                <!--Text top-toolbar-->
-                <div class="main-content__canvas__toolbar text">
-                    <p>
-                        <select name="" id="">
-                            <option value="text">Text</option>
-                            <option value="figure">Figure</option>
-                        </select>
-                    </p>
-                    <p>Color <input type="color" name="" id=""></p>
-                    <p>Font size:
-                        <input type="number" name="" id="" min="1">
-                    </p>
-                    <p>Font style:
-                        <select name="" id="">
-                            <option value="normal">Normal</option>
-                            <option value="italic">Italic</option>
-                            <option value="oblique">Oblique</option>
-                        </select>
-                    </p>
-                    <p>Font weight:
-                        <select name="" id="">
-                            <option value="normal">Normal</option>
-                            <option value="italic">Bold</option>
-                            <option value="oblique">Lighter</option>
-                        </select>
-                    </p>
-                    <p>Font family:
-                        <select name="" id="">
-                            <option value="soon">Coming soon</option>
-                        </select>
-                    </p>
-                </div><!--End of text top-toolbar-->
-                
-                
-                <div class="main-content__canvas__text">
-                    Some Text
-                </div>
 
-            </div><!--End of canvas-->
+            </div>
+            <!--End of canvas-->
             
             <!--Answers side panel-->
             <div class="main-content__answer">
@@ -398,21 +238,220 @@
                     <p>border: 0px 0px 0px 0px;</p>
                     <p>transform: none;</p>
                     <p>outline: 0px 0px 0px 0px;</p>
-                </div><!--End of square answers-->
+                </div>
+                <!--End of square answers-->
+            </div>
+            <!--End of answers side panel-->
+            </div>
+            <!--End of figure canvas-->
 
-                <!--Text answers-->
-                <div class="main-content__answer__text">
-                    <p>text-decoration: none;</p>
-                    <p>text-shadow: none;</p>
-                    <p>text-transform: none;</p>
-                    <p>transform: none;</p>
-                    <p>border: none;</p>
-                </div> <!--End of text answers-->
+            <!--Text canvas-->
+            <div class="main-content text-canvas disabled">
+                <div class="main-content__tools-panel">
+                
+                    <!--Text accordeon-->
+                    <div class="text-tools accordeon__container disabled">
+                        <div class="accordeon__item text-decoration">
+                            <div class="accordeon__item__title">Text decoration</div>
+                            <div class="accordeon__item__content">
+                                <p>
+                                    <select name="text decoration" id="">
+                                        <option value="none">none</option>
+                                        <option value="line-through">line-through</option>
+                                        <option value="overline">overline</option>
+                                        <option value="underline">underline</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    Color 
+                                    <input type="color" name="" id="">
+                                </p>
+                                <p>
+                                    Style
+                                    <select name="text-decoration-style" id="">
+                                        <option value="solid">solid</option>
+                                        <option value="double">double</option>
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="wavy">wavy</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordeon__item text-shadow">
+                            <div class="accordeon__item__title">Text shadow</div>
+                            <div class="accordeon__item__content">
+                                <p>
+                                    Color 
+                                    <input type="color" name="" id="">
+                                </p>
+                                <p>
+                                    Offset x<br>
+                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                </p>
+                                <p>
+                                    Offset y<br>
+                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                </p>
+                                <p>
+                                    Blur radius<br>
+                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                </p>
+                                <p>
+                                    Spread radius<br>
+                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordeon__item text-transform">
+                            <div class="accordeon__item__title">Text transform</div>
+                            <div class="accordeon__item__content">
+                                <p>
+                                    <select name="text transform" id="">
+                                        <option value="none">none</option>
+                                        <option value="capitalize">capitalize</option>
+                                        <option value="uppercase">uppercase</option>
+                                        <option value="lowercase">lowercase</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordeon__item transform">
+                            <div class="accordeon__item__title">Transform</div>
+                            <div class="accordeon__item__content">
+                                <p>
+                                    Rotate<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Scale X<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Scale Y<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Scew X<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Scew Y<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Translate X<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Translate Y<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordeon__item border-text">
+                            <div class="accordeon__item__title">Border</div>
+                            <div class="accordeon__item__content">
+                                <p>
+                                    <input type="checkbox" name="top-text-border" id="top-text-border">
+                                    <label for="top-text-border">Top</label>
+                                    <input type="checkbox" name="right-text-border" id="right-text-border">
+                                    <label for="right-text-border">Right</label>
+                                    <input type="checkbox" name="bottom-text-border" id="bottom-text-border">
+                                    <label for="bottom-text-border">Bottom</label>
+                                    <input type="checkbox" name="left-text-border" id="left-text-border">
+                                    <label for="left-text-border">Left</label>
+                                    <input type="checkbox" name="all-borders" id="all-borders">
+                                    <label for="all-borders">All</label>
+                                </p>
+                                <p>
+                                    Border width<br>
+                                    <input type="range" name="" id=""><span>0</span>
+                                </p>
+                                <p>
+                                    Border style<br>
+                                    <select name="border style" id="">
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="solid">solid</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    Color<br>
+                                    <input type="color" name="" id="">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of text accordeon-->
+    
+                    <button class="btn">Apply</button>
+                    <button class="btn">Reset</button>
+                </div><!--End of side tools panel-->
+                
+                <!--Canvas-->
+                <div class="main-content__canvas">
+                    
+                    
+                    <!--Text top-toolbar-->
+                    <div class="main-content__canvas__toolbar text">
+        
+                        <p>Color <input type="color" name="" id=""></p>
+                        <p>Font size:
+                            <input type="number" name="" id="" min="1">
+                        </p>
+                        <p>Font style:
+                            <select name="" id="">
+                                <option value="normal">Normal</option>
+                                <option value="italic">Italic</option>
+                                <option value="oblique">Oblique</option>
+                            </select>
+                        </p>
+                        <p>Font weight:
+                            <select name="" id="">
+                                <option value="normal">Normal</option>
+                                <option value="italic">Bold</option>
+                                <option value="oblique">Lighter</option>
+                            </select>
+                        </p>
+                        <p>Font family:
+                            <select name="" id="">
+                                <option value="soon">Coming soon</option>
+                            </select>
+                        </p>
+                    </div><!--End of text top-toolbar-->
+                    
+                    <div class="main-content__canvas__text disabled">
+                        Some Text
+                    </div>
+    
+                </div><!--End of canvas-->
+                
+                <!--Answers side panel-->
+                <div class="main-content__answer">
+                    <!--Text answers-->
+                    <div class="main-content__answer__text">
+                        <p>text-decoration: none;</p>
+                        <p>text-shadow: none;</p>
+                        <p>text-transform: none;</p>
+                        <p>transform: none;</p>
+                        <p>border: none;</p>
+                    </div> <!--End of text answers-->
+    
+                </div><!--End of answers side panel-->
+            </div>
+            
+            <!--End of text canvas-->
 
-            </div><!--End of answers side panel-->
-        </main><!--End of main content-->
+        </main>
+        <!--End of ain content-->
 
-            <!--Main footer-->
+        <!--Footer-->
         <footer class="main-footer">
             <div class="main-footer__email">
                 <a href="mailto:nataliech0409@gmail.com">nataliech0409@gmail.com</a>
@@ -432,10 +471,9 @@
                 &copy;2021 webpage designed by <a href="https://natalielinen-web-portfolio.netlify.app/"
                     target="_blank">Natalielinen</a>
             </div>
-        </footer><!--End of main footer-->
-    </div>
-    <script src="scripts/accordeon.js"></script>
-    <script src="scripts/main.js"></script>   
-</body>
+        </footer>
+        <!--End of footer-->
 
+    </div><!--End of container-->
+</body>
 </html>

@@ -27,9 +27,22 @@ body {
     font-style: italic;
 }
 
+.page-tools-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: orangered;
+    border-top: 1px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c;
+}
+
 .main-content {
     display: flex;
 }
+
 
 .main-content__tools-panel {
     width: 18%;
@@ -187,19 +200,19 @@ input[type="checkbox"] {
 .main-footer__social__git {
     grid-column: 1/2;
     grid-row: 1/2;
-    background: url('assets/github.png') center center no-repeat;
+    background: url('../assets/github.png') center center no-repeat;
 }
 
 .main-footer__social__vk {
     grid-column: 2/3;
     grid-row: 1/2;
-    background: url('assets/vk.png') center center no-repeat;
+    background: url('../assets/vk.png') center center no-repeat;
 }
 
 .main-footer__social__ln {
     grid-column: 3/4;
     grid-row: 1/2;
-    background: url('assets/linkedin.png') center center no-repeat;
+    background: url('../assets/linkedin.png') center center no-repeat;
 }
 
 .main-footer__copywright {
@@ -215,4 +228,8 @@ a:hover {
 select, 
 input[type="number"] {
     outline: none;
+}
+
+.disabled {
+    display: none;
 }
