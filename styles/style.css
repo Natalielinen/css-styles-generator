@@ -6,12 +6,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'KoHo', sans-serif;
-} 
+}
 
 .container {
     width: 100%;
     height: auto;
-} 
+}
 
 .main-header {
     display: flex;
@@ -29,7 +29,7 @@ body {
 
 .main-content {
     display: flex;
-} 
+}
 
 .main-content__tools-panel {
     width: 18%;
@@ -40,15 +40,29 @@ body {
     border-bottom: 2px solid #3c3c3c;
 }
 
-.accordeon__item {
+.btn {
+    margin-top: 35px;
+    margin-right: 30px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: orangered;
+    border: 3px solid orangered;
+    border-radius: 30px;
+    text-transform: uppercase;
     cursor: pointer;
 }
+
+.btn:hover {
+    opacity: 0.7;
+}
+
 .accordeon__item__title {
     display: flex;
     justify-content: space-between;
     padding: 5px 15px;
     border-bottom: 2px solid rgb(20, 20, 20);
     background-color: orangered;
+    cursor: pointer;
 }
 
 .accordeon__item__title::after {
@@ -56,24 +70,34 @@ body {
 }
 
 .accordeon__item__content {
+    padding: 10px 5px;
     background-color: rgb(20, 20, 20);
     color: orangered;
-    height: 0;
-    overflow: hidden;
+    /* height: 0;
+    overflow: hidden; */
     transition: .5s ease-in-out;
 }
 
 .accordeon__item__content p {
-   padding: 5px 15px;
+    padding: 5px 15px;
 }
 
-.accordeon__item.active .accordeon__item__content {
+.accordeon__item__content p span {
+    padding-left: 10px;
+}
+
+input[type="checkbox"] {
+    background-color: orangered;
+
+}
+
+/* .accordeon__item__title.active .accordeon__item__content {
     height: 290px;
 }
 
-.accordeon__item.active .accordeon__item__title::after {
+.accordeon__item__title.active .accordeon__item__title::after {
     content: '-';
-}
+} */
 
 .main-content__canvas {
     display: flex;
@@ -118,7 +142,7 @@ body {
     width: 20%;
     height: auto;
     background-color: black;
-    color:orangered;
+    color: orangered;
     padding-left: 20px;
     border-top: 1px solid #3c3c3c;
     border-bottom: 2px solid #3c3c3c;
@@ -139,10 +163,11 @@ body {
     color: orangered;
     text-decoration: none;
 }
+
 .main-footer__email {
     grid-column: 1/2;
     grid-row: 1/2;
-    
+
 }
 
 .main-footer__social {
@@ -185,4 +210,9 @@ body {
 
 a:hover {
     text-decoration: underline;
-} 
+}
+
+select, 
+input[type="number"] {
+    outline: none;
+}
