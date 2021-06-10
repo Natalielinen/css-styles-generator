@@ -28,7 +28,7 @@
         <div class="page-tools-bar">
             <p>
                 Choose canvas
-                <select name="figure-trigger" id="figure-trigger">
+                <select name="canvas-trigger" id="canvas-trigger">
                     <option value="figure">Figure</option>
                     <option value="text">Text</option>                            
                 </select>
@@ -57,7 +57,7 @@
                 <div class="figure-tools accordeon__container">
                     <div class="accordeon__item border-radius">
                         <div class="accordeon__item__title">Border radius</div>
-                        <div class="accordeon__item__content">
+                        <div class="accordeon__item__content disabled">
                             <p>
                                 Top left corner <br>
                                 <input type="range" name="" id=""><span>0</span>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="accordeon__item box-shadow">
                         <div class="accordeon__item__title">Box shadow</div>
-                        <div class="accordeon__item__content">
+                        <div class="accordeon__item__content disabled">
                             <p>
                                 <input type="checkbox" name="inset-box-shadow" id="inset-box-shadow">
                                 <label for="inset-box-shadow">Inset </label>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="accordeon__item border">
                         <div class="accordeon__item__title">Border</div>
-                        <div class="accordeon__item__content">
+                        <div class="accordeon__item__content disabled">
                             <p>
                                 <input type="checkbox" name="top-figure-border" id="top-figure-border">
                                 <label for="top-figure-border">Top</label>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="accordeon__item transform">
                         <div class="accordeon__item__title">Transform</div>
-                        <div class="accordeon__item__content">
+                        <div class="accordeon__item__content disabled">
                             <p>
                                 Rotate<br>
                                 <input type="range" name="" id=""><span>0</span>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="accordeon__item outline">
                         <div class="accordeon__item__title">Outline</div>
-                        <div class="accordeon__item__content">
+                        <div class="accordeon__item__content disabled">
                             <p>
                                 Color<br>
                                 <input type="color" name="" id="">
@@ -216,8 +216,11 @@
             <div class="main-content__canvas">
                 <!--Square top-toolbar-->
                 <div class="main-content__canvas__toolbar square">
-                    <p>Color <input type="color" name="" id=""></p>
-                    <p>Opacity <input type="number" name="" id="" min="0" max="1"> </p>
+                    <p>Color <input type="color" name="square-color" id="square-color"></p>
+                    <p>Opacity 
+                        <input type="range" name="square-opacity" id="square-opacity" min="0" max="1" step="0.1" value="1"> 
+                        <span>0</span>
+                    </p>
                     <p>Size:
                         W: <input type="number" name="" id="" min="1">
                         H: <input type="number" name="" id="" min="1">
@@ -250,10 +253,10 @@
                 <div class="main-content__tools-panel">
                 
                     <!--Text accordeon-->
-                    <div class="text-tools accordeon__container disabled">
+                    <div class="text-tools accordeon__container">
                         <div class="accordeon__item text-decoration">
                             <div class="accordeon__item__title">Text decoration</div>
-                            <div class="accordeon__item__content">
+                            <div class="accordeon__item__content disabled">
                                 <p>
                                     <select name="text decoration" id="">
                                         <option value="none">none</option>
@@ -280,7 +283,7 @@
                         </div>
                         <div class="accordeon__item text-shadow">
                             <div class="accordeon__item__title">Text shadow</div>
-                            <div class="accordeon__item__content">
+                            <div class="accordeon__item__content disabled">
                                 <p>
                                     Color 
                                     <input type="color" name="" id="">
@@ -305,7 +308,7 @@
                         </div>
                         <div class="accordeon__item text-transform">
                             <div class="accordeon__item__title">Text transform</div>
-                            <div class="accordeon__item__content">
+                            <div class="accordeon__item__content disabled">
                                 <p>
                                     <select name="text transform" id="">
                                         <option value="none">none</option>
@@ -318,7 +321,7 @@
                         </div>
                         <div class="accordeon__item transform">
                             <div class="accordeon__item__title">Transform</div>
-                            <div class="accordeon__item__content">
+                            <div class="accordeon__item__content disabled">
                                 <p>
                                     Rotate<br>
                                     <input type="range" name="" id=""><span>0</span>
@@ -351,7 +354,7 @@
                         </div>
                         <div class="accordeon__item border-text">
                             <div class="accordeon__item__title">Border</div>
-                            <div class="accordeon__item__content">
+                            <div class="accordeon__item__content disabled">
                                 <p>
                                     <input type="checkbox" name="top-text-border" id="top-text-border">
                                     <label for="top-text-border">Top</label>
@@ -426,7 +429,7 @@
                         </p>
                     </div><!--End of text top-toolbar-->
                     
-                    <div class="main-content__canvas__text disabled">
+                    <div class="main-content__canvas__text">
                         Some Text
                     </div>
     
@@ -475,5 +478,6 @@
         <!--End of footer-->
 
     </div><!--End of container-->
+    <script src="scripts/main.js"></script>
 </body>
 </html>

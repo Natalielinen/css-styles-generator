@@ -43,7 +43,6 @@ body {
     display: flex;
 }
 
-
 .main-content__tools-panel {
     width: 18%;
     min-height: 550px;
@@ -78,17 +77,11 @@ body {
     cursor: pointer;
 }
 
-.accordeon__item__title::after {
-    content: '+';
-}
 
 .accordeon__item__content {
     padding: 10px 5px;
     background-color: rgb(20, 20, 20);
     color: orangered;
-    /* height: 0;
-    overflow: hidden; */
-    transition: .5s ease-in-out;
 }
 
 .accordeon__item__content p {
@@ -101,16 +94,7 @@ body {
 
 input[type="checkbox"] {
     background-color: orangered;
-
 }
-
-/* .accordeon__item__title.active .accordeon__item__content {
-    height: 290px;
-}
-
-.accordeon__item__title.active .accordeon__item__title::after {
-    content: '-';
-} */
 
 .main-content__canvas {
     display: flex;
