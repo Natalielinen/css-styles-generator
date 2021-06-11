@@ -94,6 +94,8 @@ input[type="checkbox"] {
     width: 400px;
     height: 400px;
     background-color: orangered;
+    margin-top: 50px;
+    margin-bottom: 80px;
 }
 
 .main-content__canvas__text {

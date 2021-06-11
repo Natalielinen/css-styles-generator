@@ -31,7 +31,7 @@
             <p>
                 Choose canvas
                 <select name="canvas-trigger" id="canvas-trigger">
-                    <option value="figure">Figure</option>
+                    <option value="figure">Block</option>
                     <option value="text">Text</option>
                 </select>
             </p>
@@ -115,28 +115,67 @@
                             <div class="accordeon__item__title">Box shadow</div>
                             <div class="accordeon__item__content disabled">
                                 <p>
-                                    <input type="checkbox" name="inset-box-shadow" id="inset-box-shadow">
+                                    <input 
+                                    type="checkbox" 
+                                    name="inset-box-shadow" 
+                                    id="inset-box-shadow">
                                     <label for="inset-box-shadow">Inset </label>
                                 </p>
                                 <p>
-                                    Offset x<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    Offset X<br>
+                                    <input 
+                                    type="range" 
+                                    name="box-shadow-offset-x" 
+                                    id="box-shadow-offset-x" 
+                                    class="box-shadow-input"
+                                    min="-100" 
+                                    max="100" 
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                                 <p>
-                                    Offset y<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    Offset Y<br>
+                                    <input 
+                                    type="range" 
+                                    name="box-shadow-offset-y" 
+                                    id="box-shadow-offset-y" 
+                                    class="box-shadow-input"
+                                    min="-100" 
+                                    max="100" 
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     Blur radius<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="box-shadow-blur" 
+                                    id="box-shadow-blur" 
+                                    class="box-shadow-input"
+                                    min="0" 
+                                    max="100" 
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     Spread radius<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="box-shadow-spread" 
+                                    id="box-shadow-spread" 
+                                    class="box-shadow-input"
+                                    min="-100" 
+                                    max="100" 
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     Color<br>
-                                    <input type="color" name="" id="">
+                                    <input 
+                                    type="color" 
+                                    name="box-shadow-color" 
+                                    id="box-shadow-color"
+                                    class="box-shadow-input">
                                 </p>
 
                             </div>
@@ -145,24 +184,73 @@
                             <div class="accordeon__item__title">Border</div>
                             <div class="accordeon__item__content disabled">
                                 <p>
-                                    <input type="checkbox" name="top-figure-border" id="top-figure-border">
-                                    <label for="top-figure-border">Top</label>
-                                    <input type="checkbox" name="right-figure-border" id="right-figure-border">
-                                    <label for="right-figure-border">Right</label>
-                                    <input type="checkbox" name="bottom-figure-border" id="bottom-figure-border">
-                                    <label for="bottom-figure-border">Bottom</label>
-                                    <input type="checkbox" name="left-figure-border" id="left-figure-border">
-                                    <label for="left-figure-border">Left</label>
-                                    <input type="checkbox" name="all-figure-borders" id="all-figure-borders">
-                                    <label for="all-figure-borders">All</label>
+                                    <input type="checkbox" name="all-block-borders" id="all-block-borders">
+                                    <label for="all-block-borders">All borders</label>
+                                </p>
+                                <p>
+                                    Top border<br>
+                                    <input 
+                                    type="range" 
+                                    name="top-block-border" 
+                                    id="top-block-border"
+                                    class="block-border-range"
+                                    min="0"
+                                    max="100"
+                                    value="0">
+                                    <span>0</span>
+                                </p>
+                                <p>
+                                    Right border<br>
+                                    <input 
+                                    type="range" 
+                                    name="right-block-border" 
+                                    id="right-block-border"
+                                    class="block-border-range"
+                                    min="0"
+                                    max="100"
+                                    value="0">
+                                    <span>0</span>
+                                </p>
+                                <p>
+                                    Bottom border<br>
+                                    <input 
+                                    type="range" 
+                                    name="bottom-block-border" 
+                                    id="bottom-block-border"
+                                    class="block-border-range"
+                                    min="0"
+                                    max="100"
+                                    value="0">
+                                    <span>0</span>
+                                </p>
+                                <p>
+                                    Left border<br>
+                                    <input 
+                                    type="range" 
+                                    name="left-block-border" 
+                                    id="left-block-border"
+                                    class="block-border-range"
+                                    min="0"
+                                    max="100"
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     Border width<br>
-                                    <input type="range" name="" id=""><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="block-border-width" 
+                                    id="block-border-width"
+                                    class="block-border-range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    disabled>
+                                    <span>0</span>
                                 </p>
                                 <p>
                                     Border style<br>
-                                    <select name="border style" id="">
+                                    <select name="block-border-style" id="block-border-style">
                                         <option value="dotted">dotted</option>
                                         <option value="dashed">dashed</option>
                                         <option value="solid">solid</option>
@@ -175,9 +263,11 @@
                                 </p>
                                 <p>
                                     Color<br>
-                                    <input type="color" name="" id="">
+                                    <input 
+                                    type="color" 
+                                    name="block-border-color" 
+                                    id="block-border-color">
                                 </p>
-
                             </div>
                         </div>
                         <div class="accordeon__item transform">
@@ -272,9 +362,14 @@
                     <div class="main-content__answer__square">
                         <p>width: <span id="answer-square-width">400</span>px;</p>
                         <p>height: <span id="answer-square-height">400</span>px;</p>
+                        <p>background-color: <span id="background-color"></span>;</p>
                         <p>border-radius: <span id="square-border-radius">0 0 0 0</span>;</p>
-                        <p>box-shadow: 0px 0px 0px 0px;</p>
-                        <p>border: 0px 0px 0px 0px;</p>
+                        <p>box-shadow: <span id="box-shadow-answer">0 0 0 0</span>;</p>
+                        <p>border: <span id="block-border-answer">0</span>;</p>
+                        <p class="disabled">border-top: <span id="block-border-top-answer">0</span>;</p>
+                        <p class="disabled">border-right: <span id="block-border-right-answer">0</span>;</p>
+                        <p class="disabled">border-bottom: <span id="block-border-bottom-answer">0</span>;</p>
+                        <p class="disabled">border-left: <span id="block-border-left-answer">0</span>;</p>
                         <p>transform: none;</p>
                         <p>outline: 0px 0px 0px 0px;</p>
                         <p>opacity: <span id="answer-square-opasity">1</span>;</p>
