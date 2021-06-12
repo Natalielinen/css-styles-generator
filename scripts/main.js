@@ -124,7 +124,7 @@ const boxShadowInputs = document.querySelectorAll('.box-shadow-input');
 const boxShadowAnswer = document.getElementById('box-shadow-answer');
 
 function changeBoxShadow() {
-    
+
     boxShadowOffsetX.nextElementSibling.innerHTML = boxShadowOffsetX.value;
     boxShadowOffsetY.nextElementSibling.innerHTML = boxShadowOffsetY.value;
     boxShadowBlur.nextElementSibling.innerHTML = boxShadowBlur.value;
@@ -161,9 +161,9 @@ const blockBorderWidth = document.getElementById('block-border-width');
 const blockBorderStyle = document.getElementById('block-border-style');
 const blockBorderColor = document.getElementById('block-border-color');
 
-const blockBorderPostfix = document.getElementById('block-border-postfix');
 const blockBorderAnswer = document.getElementById('block-border-answer');
-
+const blockBorderAnswerP = document.getElementById('block-border-answer-p');
+const sideBlockBorders = document.querySelectorAll('.side-block-border-answer-p');
 
 function changeBlockBorder() {
     for (let range of blockBorderRanges) {
@@ -171,48 +171,17 @@ function changeBlockBorder() {
     };
 };
 
-function disableRanges () {
-    if(allBorderCheckbox.checked) {
-        //сделать через цикл и переключение класса
-        topBlockBorder.disabled = true;
-        topBlockBorder.style.opacity = '0.5';
-        rightBlockBorder.disabled = true;
-        rightBlockBorder.style.opacity = '0.5';
-        bottomBlockBorder.disabled = true;
-        bottomBlockBorder.style.opacity = '0.5';
-        leftBlockBorder.disabled = true;
-        leftBlockBorder.style.opacity = '0.5';
-        blockBorderWidth.disabled = false;
-        blockBorderWidth.style.opacity = '1';
-    } else {
-        topBlockBorder.disabled = false;
-        topBlockBorder.style.opacity = '1';
-        rightBlockBorder.disabled = false;
-        rightBlockBorder.style.opacity = '1';
-        bottomBlockBorder.disabled = false;
-        bottomBlockBorder.style.opacity = '1';
-        leftBlockBorder.disabled = false;
-        leftBlockBorder.style.opacity = '1';
-        blockBorderWidth.disabled = true;
-        blockBorderWidth.style.opacity = '0.5';
-    }
-}
 
-function changeAllBorders () {
-    square.style.border = 
-    blockBorderWidth.value + 'px ' + 
-    blockBorderStyle.value + ' ' + 
+function changeAllBorders() {
+    let borderParams = blockBorderWidth.value + 'px ' +
+    blockBorderStyle.value + ' ' +
     blockBorderColor.value;
-
-}
-
-for (let range of blockBorderRanges) {
-    range.addEventListener('input', changeBlockBorder);
+    square.style.border = borderParams;
+    blockBorderWidth.nextElementSibling.innerHTML = blockBorderWidth.value;
+    blockBorderAnswer.innerHTML = borderParams;
 };
 
-allBorderCheckbox.addEventListener('change', disableRanges);
+
 blockBorderWidth.addEventListener('input', changeAllBorders);
 blockBorderStyle.addEventListener('change', changeAllBorders);
 blockBorderColor.addEventListener('input', changeAllBorders);
-
-
