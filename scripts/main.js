@@ -165,23 +165,43 @@ const blockBorderAnswer = document.getElementById('block-border-answer');
 const blockBorderAnswerP = document.getElementById('block-border-answer-p');
 const sideBlockBorders = document.querySelectorAll('.side-block-border-answer-p');
 
-function changeBlockBorder() {
-    for (let range of blockBorderRanges) {
-        range.nextElementSibling.innerHTML = range.value;
-    };
-};
-
-
 function changeAllBorders() {
     let borderParams = blockBorderWidth.value + 'px ' +
     blockBorderStyle.value + ' ' +
     blockBorderColor.value;
     square.style.border = borderParams;
     blockBorderWidth.nextElementSibling.innerHTML = blockBorderWidth.value;
-    blockBorderAnswer.innerHTML = borderParams;
+    if (blockBorderWidth.value == 0) {
+        blockBorderAnswer.innerHTML = 0;
+    } else {
+        blockBorderAnswer.innerHTML = borderParams;
+    };    
 };
-
 
 blockBorderWidth.addEventListener('input', changeAllBorders);
 blockBorderStyle.addEventListener('change', changeAllBorders);
 blockBorderColor.addEventListener('input', changeAllBorders);
+
+/* Outline */
+
+const blockOutlineColor = document.getElementById('block-outline-color');
+const blockOutlineStyle = document.getElementById('block-outline-style');
+const blockOutlineWidth = document.getElementById('block-outline-width');
+const blockOutlineAnswer = document.getElementById('block-outline-answer');
+
+function changeOutline () { 
+    blockOutlineWidth.nextElementSibling.innerHTML = blockOutlineWidth.value;
+    let outlineParams = `${blockOutlineWidth.value}px ${blockOutlineStyle.value} ${blockOutlineColor.value}`;
+    square.style.outline = outlineParams;
+    blockOutlineAnswer.innerHTML = outlineParams;
+
+};
+
+blockOutlineColor.addEventListener('input', changeOutline);
+blockOutlineStyle.addEventListener('change', changeOutline);
+blockOutlineWidth.addEventListener('input', changeOutline);
+
+
+
+
+

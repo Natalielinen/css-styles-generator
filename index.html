@@ -218,49 +218,16 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="accordeon__item transform">
-                            <div class="accordeon__item__title">Transform</div>
-                            <div class="accordeon__item__content disabled">
-                                <p>
-                                    Rotate<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scale X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scale Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scew X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scew Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Translate X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Translate Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                            </div>
-                        </div>
                         <div class="accordeon__item outline">
                             <div class="accordeon__item__title">Outline</div>
                             <div class="accordeon__item__content disabled">
                                 <p>
                                     Color<br>
-                                    <input type="color" name="" id="">
+                                    <input type="color" name="block-outline-color" id="block-outline-color">
                                 </p>
                                 <p>
                                     Outline style<br>
-                                    <select name="border style" id="">
+                                    <select name="block-outline-style" id="block-outline-style">
                                         <option value="dotted">dotted</option>
                                         <option value="dashed">dashed</option>
                                         <option value="solid">solid</option>
@@ -273,7 +240,7 @@
                                 </p>
                                 <p>
                                     Outline width<br>
-                                    <input type="range" name="" id=""><span>0</span>
+                                    <input type="range" name="block-outline-width" id="block-outline-width"><span>0</span>
                                 </p>
                             </div>
                         </div>
@@ -310,12 +277,11 @@
                     <div class="main-content__answer__square">
                         <p>width: <span id="answer-square-width">400</span>px;</p>
                         <p>height: <span id="answer-square-height">400</span>px;</p>
-                        <p>background-color: <span id="background-color"></span>;</p>
-                        <p>border-radius: <span id="square-border-radius">0 0 0 0</span>;</p>
-                        <p>box-shadow: <span id="box-shadow-answer">0 0 0 0</span>;</p>
-                        <p id="block-border-answer-p">border: <span id="block-border-answer">0</span>;</p>
-                        <p>transform: none;</p>
-                        <p>outline: 0px 0px 0px 0px;</p>
+                        <p>background-color: <span id="background-color">#ff4500</span>;</p>
+                        <p>border-radius: <span id="square-border-radius">0</span>;</p>
+                        <p>box-shadow: <span id="box-shadow-answer">none</span>;</p>
+                        <p id="block-border-answer-p">border: <span id="block-border-answer">none</span>;</p>
+                        <p>outline: <span id="block-outline-answer">none</span>;</p>
                         <p>opacity: <span id="answer-square-opasity">1</span>;</p>
                     </div>
                     <!--End of square answers-->
