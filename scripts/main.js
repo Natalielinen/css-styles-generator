@@ -1,8 +1,4 @@
 /* Choose canvas */
-const canvasTrigger = document.querySelector('#canvas-trigger');
-const figureCanvas = document.querySelector('.figure-canvas');
-const textCanvas = document.querySelector('.text-canvas');
-
 function toggleCanvas() {
     figureCanvas.classList.toggle('disabled');
     textCanvas.classList.toggle('disabled');
@@ -11,8 +7,6 @@ function toggleCanvas() {
 canvasTrigger.addEventListener('change', toggleCanvas);
 
 /* Accordeon */
-const accordeonItemsTitles = document.querySelectorAll('.accordeon__item__title');
-const accordeonItemsContent = document.querySelectorAll('.accordeon__item__content');
 
 for (let item of accordeonItemsTitles) {
     item.addEventListener('click', function () {
@@ -26,11 +20,6 @@ for (let item of accordeonItemsTitles) {
 
 /* Square color */
 
-const squareColor = document.getElementById('square-color');
-const square = document.querySelector('.main-content__canvas__square');
-const answerColor = document.getElementById('background-color');
-
-
 function changeSquareColor() {
     square.style.backgroundColor = squareColor.value;
     answerColor.innerHTML = squareColor.value;
@@ -39,10 +28,6 @@ function changeSquareColor() {
 squareColor.addEventListener('input', changeSquareColor);
 
 /* Square opacity */
-
-const opacityRange = document.querySelector('#square-opacity');
-const opacityRangeSpan = document.querySelector('#square-opacity+span');
-const squareAnswerOpacitySpan = document.getElementById('answer-square-opasity');
 
 function changeOpacity() {
     square.style.opacity = opacityRange.value;
@@ -53,11 +38,6 @@ function changeOpacity() {
 opacityRange.addEventListener('input', changeOpacity);
 
 /* Square size */
-
-const squareWidthInput = document.getElementById('square-width');
-const squareHeightInput = document.getElementById('square-height');
-const squareAnswerWidthSpan = document.getElementById('answer-square-width');
-const squareAnswerHeightSpan = document.getElementById('answer-square-height');
 
 function changeWidth() {
     square.style.width = squareWidthInput.value + 'px';
@@ -76,26 +56,10 @@ squareHeightInput.addEventListener('input', changeHeight);
 
 /* Border radius* */
 
-//inputs
-const topLeftRange = document.getElementById('top-left-radius');
-const topRightRange = document.getElementById('top-right-radius');
-const bottomRightRange = document.getElementById('bottom-right-radius');
-const bottomLeftRange = document.getElementById('bottom-left-radius');
-const allRadiusInputs = document.querySelectorAll('.square-border-radius');
-//spans-result
-const topLeftResult = document.getElementById('tl-result');
-const topRightResult = document.getElementById('tr-result');
-const bottomRightResult = document.getElementById('br-result');
-const bottomLeftResult = document.getElementById('bl-result');
-//span-answer
-const borderRadiusAnswer = document.getElementById('square-border-radius');
-
 function changeRadius() {
-    topLeftResult.innerHTML = topLeftRange.value;
-    topRightResult.innerHTML = topRightRange.value;
-    bottomRightResult.innerHTML = bottomRightRange.value;
-    bottomLeftResult.innerHTML = bottomLeftRange.value;
-
+    for (let elem of allRadiusInputs) {
+        elem.nextElementSibling.innerHTML = elem.value;
+    };
     let borderRadiusParams = topLeftRange.value + 'px ' +
         topRightRange.value + 'px ' +
         bottomRightRange.value + 'px ' +
@@ -104,31 +68,46 @@ function changeRadius() {
     square.style.borderRadius = borderRadiusParams;
 
     borderRadiusAnswer.innerHTML = borderRadiusParams;
+
+    if (topLeftRange.value == 0 && topRightRange.value == 0 && bottomRightRange.value == 0 && bottomLeftRange.value == 0) {
+        borderRadiusAnswer.innerHTML = '0';
+    };
+    if(topLeftRange.value == topRightRange.value && topLeftRange.value == bottomRightRange.value && topLeftRange.value == bottomLeftRange.value) {
+        borderRadiusAnswer.innerHTML = topLeftRange.value + 'px';
+    };
 };
 
 for (let elem of allRadiusInputs) {
     elem.addEventListener('input', changeRadius);
 };
 
+
+
+for (let elem of manualRadiusInputs) {
+    elem.previousElementSibling.onclick = function () {
+        elem.previousElementSibling.classList.add('disabled');
+        elem.classList.remove('disabled');
+        elem.value = elem.previousElementSibling.previousElementSibling.value;  
+    };
+};
+
+for (let elem of manualRadiusInputs) {
+    elem.onblur = function () {
+        elem.classList.add('disabled');
+        elem.previousElementSibling.classList.remove('disabled');
+        elem.previousElementSibling.innerHTML = elem.value;
+        elem.previousElementSibling.previousElementSibling.value = elem.value;
+        changeRadius();
+    };
+};
+
 /* Box shadow */
-
-const insetShadowCheckbox = document.getElementById('inset-box-shadow');
-
-const boxShadowOffsetX = document.getElementById('box-shadow-offset-x');
-const boxShadowOffsetY = document.getElementById('box-shadow-offset-y');
-const boxShadowBlur = document.getElementById('box-shadow-blur');
-const boxShadowSpread = document.getElementById('box-shadow-spread');
-const boxShadowColor = document.getElementById('box-shadow-color');
-const boxShadowInputs = document.querySelectorAll('.box-shadow-input');
-
-const boxShadowAnswer = document.getElementById('box-shadow-answer');
 
 function changeBoxShadow() {
 
-    boxShadowOffsetX.nextElementSibling.innerHTML = boxShadowOffsetX.value;
-    boxShadowOffsetY.nextElementSibling.innerHTML = boxShadowOffsetY.value;
-    boxShadowBlur.nextElementSibling.innerHTML = boxShadowBlur.value;
-    boxShadowSpread.nextElementSibling.innerHTML = boxShadowSpread.value;
+    for (let elem of boxShadowInputs) {
+        elem.nextElementSibling.innerHTML = elem.value;
+    };
 
     let shadowParams = `${insetShadowCheckbox.checked  ? 'inset' : ''} 
     ${boxShadowOffsetX.value}px 
@@ -140,42 +119,32 @@ function changeBoxShadow() {
     boxShadowAnswer.innerHTML = shadowParams;
 
     square.style.boxShadow = shadowParams;
+
+    if (boxShadowOffsetX.value == 0 && boxShadowOffsetY.value == 0 && boxShadowBlur.value == 0 && boxShadowSpread.value == 0) {
+        boxShadowAnswer.innerHTML = 'none';
+    };
 };
 
 for (let input of boxShadowInputs) {
     input.addEventListener('input', changeBoxShadow);
 };
 
+boxShadowColor.addEventListener('input', changeBoxShadow);
 insetShadowCheckbox.addEventListener('change', changeBoxShadow);
 
 /* Borders (square) */
 
-const topBlockBorder = document.getElementById('top-block-border');
-const rightBlockBorder = document.getElementById('right-block-border');
-const bottomBlockBorder = document.getElementById('bottom-block-border');
-const leftBlockBorder = document.getElementById('left-block-border');
-const blockBorderRanges = document.querySelectorAll('.block-border-range');
-const allBorderCheckbox = document.getElementById('all-block-borders');
-
-const blockBorderWidth = document.getElementById('block-border-width');
-const blockBorderStyle = document.getElementById('block-border-style');
-const blockBorderColor = document.getElementById('block-border-color');
-
-const blockBorderAnswer = document.getElementById('block-border-answer');
-const blockBorderAnswerP = document.getElementById('block-border-answer-p');
-const sideBlockBorders = document.querySelectorAll('.side-block-border-answer-p');
-
 function changeAllBorders() {
     let borderParams = blockBorderWidth.value + 'px ' +
-    blockBorderStyle.value + ' ' +
-    blockBorderColor.value;
+        blockBorderStyle.value + ' ' +
+        blockBorderColor.value;
     square.style.border = borderParams;
     blockBorderWidth.nextElementSibling.innerHTML = blockBorderWidth.value;
     if (blockBorderWidth.value == 0) {
         blockBorderAnswer.innerHTML = 0;
     } else {
         blockBorderAnswer.innerHTML = borderParams;
-    };    
+    };
 };
 
 blockBorderWidth.addEventListener('input', changeAllBorders);
@@ -184,24 +153,18 @@ blockBorderColor.addEventListener('input', changeAllBorders);
 
 /* Outline */
 
-const blockOutlineColor = document.getElementById('block-outline-color');
-const blockOutlineStyle = document.getElementById('block-outline-style');
-const blockOutlineWidth = document.getElementById('block-outline-width');
-const blockOutlineAnswer = document.getElementById('block-outline-answer');
-
-function changeOutline () { 
+function changeOutline() {
     blockOutlineWidth.nextElementSibling.innerHTML = blockOutlineWidth.value;
     let outlineParams = `${blockOutlineWidth.value}px ${blockOutlineStyle.value} ${blockOutlineColor.value}`;
     square.style.outline = outlineParams;
-    blockOutlineAnswer.innerHTML = outlineParams;
-
+    if(blockOutlineWidth.value == 0) {
+        blockOutlineAnswer.innerHTML = 'none';
+    } else {
+        blockOutlineAnswer.innerHTML = outlineParams;
+    };    
 };
 
 blockOutlineColor.addEventListener('input', changeOutline);
 blockOutlineStyle.addEventListener('change', changeOutline);
 blockOutlineWidth.addEventListener('input', changeOutline);
-
-
-
-
 

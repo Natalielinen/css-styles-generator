@@ -70,7 +70,12 @@
                                         min="0"
                                         max="800"
                                         value="0">
-                                    <span id="tl-result">0</span>
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="top-left-rad-manual-input" 
+                                    class="manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Top right corner <br>
@@ -82,7 +87,12 @@
                                         min="0"
                                         max="800"
                                         value="0">
-                                    <span id="tr-result">0</span>
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="top-right-rad-manual-input" 
+                                    class="manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Bottom right corner<br>
@@ -94,7 +104,12 @@
                                         min="0"
                                         max="800"
                                         value="0">
-                                    <span id="br-result">0</span>
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="bottom-right-rad-manual-input" 
+                                    class="manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Bottom left corner<br>
@@ -106,7 +121,12 @@
                                         min="0"
                                         max="800"
                                         value="0">
-                                    <span id="bl-result">0</span>
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="bottom-left-rad-manual-input" 
+                                    class="manual-inputs disabled"
+                                    min="0">
                                 </p>
 
                             </div>
@@ -175,7 +195,7 @@
                                     type="color" 
                                     name="box-shadow-color" 
                                     id="box-shadow-color"
-                                    class="box-shadow-input">
+                                    >
                                 </p>
 
                             </div>
@@ -240,7 +260,12 @@
                                 </p>
                                 <p>
                                     Outline width<br>
-                                    <input type="range" name="block-outline-width" id="block-outline-width"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="block-outline-width" 
+                                    id="block-outline-width"
+                                    value="0">
+                                    <span>0</span>
                                 </p>
                             </div>
                         </div>
@@ -361,39 +386,6 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="accordeon__item transform">
-                            <div class="accordeon__item__title">Transform</div>
-                            <div class="accordeon__item__content disabled">
-                                <p>
-                                    Rotate<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scale X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scale Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scew X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Scew Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Translate X<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                                <p>
-                                    Translate Y<br>
-                                    <input type="range" name="" id=""><span>0</span>
-                                </p>
-                            </div>
-                        </div>
                         <div class="accordeon__item border-text">
                             <div class="accordeon__item__title">Border</div>
                             <div class="accordeon__item__content disabled">
@@ -484,7 +476,6 @@
                         <p>text-decoration: none;</p>
                         <p>text-shadow: none;</p>
                         <p>text-transform: none;</p>
-                        <p>transform: none;</p>
                         <p>border: none;</p>
                     </div>
                     <!--End of text answers-->
@@ -520,9 +511,9 @@
             </div>
         </footer>
         <!--End of footer-->
-
     </div>
     <!--End of container-->
+    <script src="scripts/variables.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 

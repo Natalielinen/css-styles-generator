@@ -200,7 +200,20 @@ input[type="number"] {
     outline: none;
 }
 
+input[type="range"] {
+    width: 120px;
+}
+
+.manual-inputs {
+    width: 50px;
+    display: inline-block;
+}
+
 .disabled {
     display: none;
+}
+
+.square-border-radius+span {
+    cursor: pointer;
 }
 
