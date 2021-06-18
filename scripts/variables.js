@@ -3,6 +3,13 @@ const canvasTrigger = document.querySelector('#canvas-trigger');
 const figureCanvas = document.querySelector('.figure-canvas');
 const textCanvas = document.querySelector('.text-canvas');
 
+/** Accordeon **/
+
+const accordeonItemsTitles = document.querySelectorAll('.accordeon__item__title');
+const accordeonItemsContent = document.querySelectorAll('.accordeon__item__content');
+
+
+/* Square variables */
 /** Square top toolbar **/
 //Square background-color
 
@@ -23,11 +30,6 @@ const squareHeightInput = document.getElementById('square-height');
 const squareAnswerWidthSpan = document.getElementById('answer-square-width');
 const squareAnswerHeightSpan = document.getElementById('answer-square-height');
 
-/** Accordeon **/
-
-const accordeonItemsTitles = document.querySelectorAll('.accordeon__item__title');
-const accordeonItemsContent = document.querySelectorAll('.accordeon__item__content');
-
 /* Accordeon square side toolbar */
 //Border radius
 
@@ -38,7 +40,7 @@ const bottomRightRange = document.getElementById('bottom-right-radius');
 const bottomLeftRange = document.getElementById('bottom-left-radius');
 const allRadiusInputs = document.querySelectorAll('.square-border-radius');
 
-const manualRadiusInputs = document.querySelectorAll('.manual-inputs');
+const manualRadiusInputs = document.querySelectorAll('.manual-radius-inputs');
 
 //span-answer
 const borderRadiusAnswer = document.getElementById('square-border-radius');
@@ -54,6 +56,8 @@ const boxShadowSpread = document.getElementById('box-shadow-spread');
 const boxShadowColor = document.getElementById('box-shadow-color');
 const boxShadowInputs = document.querySelectorAll('.box-shadow-input');
 
+const shadowManualInputs = document.querySelectorAll('.shadow-manual-inputs');
+
 const boxShadowAnswer = document.getElementById('box-shadow-answer');
 
 //Square borders
@@ -64,6 +68,8 @@ const blockBorderWidth = document.getElementById('block-border-width');
 const blockBorderStyle = document.getElementById('block-border-style');
 const blockBorderColor = document.getElementById('block-border-color');
 
+const borderManualInput = document.querySelector('.border-manual-input');
+
 const blockBorderAnswer = document.getElementById('block-border-answer');
 
 //Square outline
@@ -72,6 +78,28 @@ const blockOutlineColor = document.getElementById('block-outline-color');
 const blockOutlineStyle = document.getElementById('block-outline-style');
 const blockOutlineWidth = document.getElementById('block-outline-width');
 const blockOutlineAnswer = document.getElementById('block-outline-answer');
+const outlineManualInput = document.querySelector('.outline-manual-input');
+
+/* End of square variables */
+
+/* Text variables */
+
+const text = document.querySelector('.main-content__canvas__text');
+
+const textColor = document.getElementById('text-color');
+const textColorAnswer = document.getElementById('text-color-answer');
+
+const fontSize = document.getElementById('font-size');
+const fontSizeAnswer = document.getElementById('font-size-answer');
+
+const fontStyle = document.getElementById('font-style');
+
+
+
+
+
+
+
 
 
 

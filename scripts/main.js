@@ -14,6 +14,20 @@ for (let item of accordeonItemsTitles) {
     });
 };
 
+/* Manual input */
+function enableManualInput(manualInput) {
+    manualInput.previousElementSibling.classList.add('disabled');
+    manualInput.classList.remove('disabled');
+    manualInput.value = manualInput.previousElementSibling.previousElementSibling.value;
+};
+
+function disableManualInput(manualInput) {
+    manualInput.classList.add('disabled');
+    manualInput.previousElementSibling.classList.remove('disabled');
+    manualInput.previousElementSibling.innerHTML = manualInput.value;
+    manualInput.previousElementSibling.previousElementSibling.value = manualInput.value;
+};
+
 /*** Square customization ***/
 
 /** Top toolbar**/
@@ -54,6 +68,8 @@ squareHeightInput.addEventListener('input', changeHeight);
 
 /** Side toolbar **/
 
+
+
 /* Border radius* */
 
 function changeRadius() {
@@ -72,7 +88,7 @@ function changeRadius() {
     if (topLeftRange.value == 0 && topRightRange.value == 0 && bottomRightRange.value == 0 && bottomLeftRange.value == 0) {
         borderRadiusAnswer.innerHTML = '0';
     };
-    if(topLeftRange.value == topRightRange.value && topLeftRange.value == bottomRightRange.value && topLeftRange.value == bottomLeftRange.value) {
+    if (topLeftRange.value == topRightRange.value && topLeftRange.value == bottomRightRange.value && topLeftRange.value == bottomLeftRange.value) {
         borderRadiusAnswer.innerHTML = topLeftRange.value + 'px';
     };
 };
@@ -85,20 +101,23 @@ for (let elem of allRadiusInputs) {
 
 for (let elem of manualRadiusInputs) {
     elem.previousElementSibling.onclick = function () {
-        elem.previousElementSibling.classList.add('disabled');
-        elem.classList.remove('disabled');
-        elem.value = elem.previousElementSibling.previousElementSibling.value;  
+        enableManualInput(elem);
     };
 };
 
 for (let elem of manualRadiusInputs) {
     elem.onblur = function () {
-        elem.classList.add('disabled');
-        elem.previousElementSibling.classList.remove('disabled');
-        elem.previousElementSibling.innerHTML = elem.value;
-        elem.previousElementSibling.previousElementSibling.value = elem.value;
+        disableManualInput(elem)
         changeRadius();
     };
+
+    elem.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+        if (key == 13) {
+            disableManualInput(elem);
+            changeRadius();
+        };
+    });
 };
 
 /* Box shadow */
@@ -132,6 +151,27 @@ for (let input of boxShadowInputs) {
 boxShadowColor.addEventListener('input', changeBoxShadow);
 insetShadowCheckbox.addEventListener('change', changeBoxShadow);
 
+for (let elem of shadowManualInputs) {
+    elem.previousElementSibling.onclick = function () {
+        enableManualInput(elem);
+    };
+};
+
+for (let elem of shadowManualInputs) {
+    elem.onblur = function () {
+        disableManualInput(elem);
+        changeBoxShadow();
+    };
+
+    elem.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+        if (key == 13) {
+            disableManualInput(elem);
+            changeBoxShadow();
+        };
+    });
+};
+
 /* Borders (square) */
 
 function changeAllBorders() {
@@ -141,7 +181,7 @@ function changeAllBorders() {
     square.style.border = borderParams;
     blockBorderWidth.nextElementSibling.innerHTML = blockBorderWidth.value;
     if (blockBorderWidth.value == 0) {
-        blockBorderAnswer.innerHTML = 0;
+        blockBorderAnswer.innerHTML = 'none';
     } else {
         blockBorderAnswer.innerHTML = borderParams;
     };
@@ -151,20 +191,77 @@ blockBorderWidth.addEventListener('input', changeAllBorders);
 blockBorderStyle.addEventListener('change', changeAllBorders);
 blockBorderColor.addEventListener('input', changeAllBorders);
 
+borderManualInput.previousElementSibling.onclick = function () {
+    enableManualInput(borderManualInput);
+};
+
+borderManualInput.onblur = function () {
+    disableManualInput(borderManualInput);
+    changeAllBorders();
+};
+
+borderManualInput.addEventListener('keydown', (e) => {
+    let key = e.keyCode;
+    if (key == 13) {
+        disableManualInput(borderManualInput);
+        changeAllBorders();
+    };
+});
+
 /* Outline */
 
 function changeOutline() {
     blockOutlineWidth.nextElementSibling.innerHTML = blockOutlineWidth.value;
     let outlineParams = `${blockOutlineWidth.value}px ${blockOutlineStyle.value} ${blockOutlineColor.value}`;
     square.style.outline = outlineParams;
-    if(blockOutlineWidth.value == 0) {
+    if (blockOutlineWidth.value == 0) {
         blockOutlineAnswer.innerHTML = 'none';
     } else {
         blockOutlineAnswer.innerHTML = outlineParams;
-    };    
+    };
 };
 
 blockOutlineColor.addEventListener('input', changeOutline);
 blockOutlineStyle.addEventListener('change', changeOutline);
 blockOutlineWidth.addEventListener('input', changeOutline);
+
+outlineManualInput.previousElementSibling.onclick = function () {
+    enableManualInput(outlineManualInput);
+};
+
+outlineManualInput.onblur = function () {
+    disableManualInput(outlineManualInput);
+    changeOutline();
+};
+
+outlineManualInput.addEventListener('keydown', (e) => {
+    let key = e.keyCode;
+    if (key == 13) {
+        disableManualInput(outlineManualInput);
+        changeOutline();
+    };
+});
+
+/**** Text customization ****/
+/* Top toolbar */
+
+function changeTextColor () {
+    text.style.color = textColor.value;
+    textColorAnswer.innerHTML = textColor.value;
+};
+
+textColor.addEventListener('input', changeTextColor);
+
+function changeFontSize () {
+    text.style.fontSize = fontSize.value + 'px';
+    fontSizeAnswer.innerHTML = fontSize.value;
+};
+
+fontSize.addEventListener('input', changeFontSize);
+
+function changeFontStyle () {
+    text.style.fontStyle = fontStyle.value;
+}
+
+fontStyle.addEventListener('input', changeFontStyle);
 

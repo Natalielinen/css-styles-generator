@@ -52,7 +52,7 @@
         <!--Main content-->
         <main>
             <!--Figure canvas-->
-            <div class="main-content figure-canvas">
+            <div class="main-content figure-canvas disabled">
                 <!--Side tools panel-->
                 <div class="main-content__tools-panel">
                     <!--Square accordeon-->
@@ -74,7 +74,7 @@
                                     <input 
                                     type="number" 
                                     name="top-left-rad-manual-input" 
-                                    class="manual-inputs disabled"
+                                    class="manual-radius-inputs disabled"
                                     min="0">
                                 </p>
                                 <p>
@@ -91,7 +91,7 @@
                                     <input 
                                     type="number" 
                                     name="top-right-rad-manual-input" 
-                                    class="manual-inputs disabled"
+                                    class="manual-radius-inputs disabled"
                                     min="0">
                                 </p>
                                 <p>
@@ -108,7 +108,7 @@
                                     <input 
                                     type="number" 
                                     name="bottom-right-rad-manual-input" 
-                                    class="manual-inputs disabled"
+                                    class="manual-radius-inputs disabled"
                                     min="0">
                                 </p>
                                 <p>
@@ -125,7 +125,7 @@
                                     <input 
                                     type="number" 
                                     name="bottom-left-rad-manual-input" 
-                                    class="manual-inputs disabled"
+                                    class="manual-radius-inputs disabled"
                                     min="0">
                                 </p>
 
@@ -152,6 +152,11 @@
                                     max="100" 
                                     value="0">
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="offset-x-manual-input" 
+                                    class="shadow-manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Offset Y<br>
@@ -164,6 +169,11 @@
                                     max="100" 
                                     value="0">
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="offset-y-manual-input" 
+                                    class="shadow-manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Blur radius<br>
@@ -176,6 +186,11 @@
                                     max="100" 
                                     value="0">
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="blur-manual-input" 
+                                    class="shadow-manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Spread radius<br>
@@ -188,6 +203,11 @@
                                     max="100" 
                                     value="0">
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="spread-manual-input" 
+                                    class="shadow-manual-inputs disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Color<br>
@@ -215,6 +235,11 @@
                                     value="0"
                                     >
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="border-manual-input" 
+                                    class="border-manual-input disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Border style<br>
@@ -266,6 +291,11 @@
                                     id="block-outline-width"
                                     value="0">
                                     <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="outline-manual-input" 
+                                    class="outline-manual-input disabled"
+                                    min="0">
                                 </p>
                             </div>
                         </div>
@@ -316,7 +346,7 @@
             <!--End of figure canvas-->
 
             <!--Text canvas-->
-            <div class="main-content text-canvas disabled">
+            <div class="main-content text-canvas">
                 <div class="main-content__tools-panel">
 
                     <!--Text accordeon-->
@@ -436,12 +466,14 @@
                     <!--Text top-toolbar-->
                     <div class="main-content__canvas__toolbar text">
 
-                        <p>Color <input type="color" name="" id=""></p>
+                        <p>Color 
+                            <input type="color" name="text-color" id="text-color">
+                        </p>
                         <p>Font size:
-                            <input type="number" name="" id="" min="1">
+                            <input type="number" name="font-size" id="font-size" min="1">
                         </p>
                         <p>Font style:
-                            <select name="" id="">
+                            <select name="font-style" id="font-style">
                                 <option value="normal">Normal</option>
                                 <option value="italic">Italic</option>
                                 <option value="oblique">Oblique</option>
@@ -473,6 +505,8 @@
                 <div class="main-content__answer">
                     <!--Text answers-->
                     <div class="main-content__answer__text">
+                        <p>color: <span id="text-color-answer">#000000</span>;</p>
+                        <p>font-size: <span id="font-size-answer">48</span>px;</p>
                         <p>text-decoration: none;</p>
                         <p>text-shadow: none;</p>
                         <p>text-transform: none;</p>

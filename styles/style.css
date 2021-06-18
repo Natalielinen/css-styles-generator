@@ -204,7 +204,10 @@ input[type="range"] {
     width: 120px;
 }
 
-.manual-inputs {
+.manual-radius-inputs,
+.shadow-manual-inputs,
+.border-manual-input,
+.outline-manual-input {
     width: 50px;
     display: inline-block;
 }
@@ -213,7 +216,10 @@ input[type="range"] {
     display: none;
 }
 
-.square-border-radius+span {
+.square-border-radius+span,
+.box-shadow-input+span,
+.block-border-range+span,
+#block-outline-width+span {
     cursor: pointer;
 }
 
