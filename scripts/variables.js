@@ -93,6 +93,41 @@ const fontSize = document.getElementById('font-size');
 const fontSizeAnswer = document.getElementById('font-size-answer');
 
 const fontStyle = document.getElementById('font-style');
+const fontStyleAnswer = document.getElementById('font-style-answer');
+
+const fontWeight = document.getElementById('font-weight');
+const fontWeightAnswer = document.getElementById('font-weight-answer');
+
+/* Text side toolbar */
+const textDecorationCheckboxes = document.querySelectorAll('.text-decoration-checkbox'); //for event listener
+
+const textDecorationLineThrough = document.getElementById('text-decoration-line-through');
+const textDecorationOverline = document.getElementById('text-decoration-overline');
+const textDecorationUnderline = document.getElementById('text-decoration-underline');
+const textDecorationAnswer = document.getElementById('text-decoration-answer');
+
+const textDecorationColor = document.getElementById('text-decoration-color');
+const textDecorationColorAnswer = document.getElementById('text-decoration-color-answer');
+
+const textDecorationStyle = document.getElementById('text-decoration-style');
+const textDecorationStyleAnswer = document.getElementById('text-decoration-style-answer');
+
+const textShadowColor = document.getElementById('text-shadow-color');
+const textShadowOffsetX = document.getElementById('text-shadow-offset-x');
+const textShadowOffsetY = document.getElementById('text-shadow-offset-y');
+const textShadowBlur = document.getElementById('text-shadow-blur');
+
+const textShadowInputs = document.querySelectorAll('.text-shadow-input');
+const textShadowManualInputs = document.querySelectorAll('.text-shadow-manual-input')
+
+const textShadowAnswer = document.getElementById('text-shadow-answer');
+
+
+
+
+
+
+
 
 
 

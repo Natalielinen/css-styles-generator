@@ -245,23 +245,105 @@ outlineManualInput.addEventListener('keydown', (e) => {
 /**** Text customization ****/
 /* Top toolbar */
 
-function changeTextColor () {
+function changeTextColor() {
     text.style.color = textColor.value;
     textColorAnswer.innerHTML = textColor.value;
 };
 
 textColor.addEventListener('input', changeTextColor);
 
-function changeFontSize () {
+function changeFontSize() {
     text.style.fontSize = fontSize.value + 'px';
     fontSizeAnswer.innerHTML = fontSize.value;
 };
 
 fontSize.addEventListener('input', changeFontSize);
 
-function changeFontStyle () {
+function changeFontStyle() {
     text.style.fontStyle = fontStyle.value;
-}
+    fontStyleAnswer.innerHTML = fontStyle.value;
+};
 
-fontStyle.addEventListener('input', changeFontStyle);
+fontStyle.addEventListener('change', changeFontStyle);
+
+function changeFontWeight() {
+    text.style.fontWeight = fontWeight.value;
+    fontWeightAnswer.innerHTML = fontWeight.value;
+};
+
+fontWeight.addEventListener('change', changeFontWeight);
+
+function changeTextDecoration() {
+
+    let textDecorationParams = 
+    `${textDecorationLineThrough.checked ? 'line-through' : ''}
+     ${textDecorationOverline.checked ? 'overline' : ''}
+     ${textDecorationUnderline.checked ? 'underline' : ''}`;
+
+    text.style.textDecoration = textDecorationParams;
+
+    textDecorationAnswer.innerHTML = textDecorationParams;
+
+    if (!textDecorationLineThrough.checked && !textDecorationOverline.checked && !textDecorationUnderline.checked) {
+        text.style.textDecoration = 'none';
+        textDecorationAnswer.innerHTML = 'none';
+    };
+};
+
+function changeTextDecorationColor () {
+    text.style.textDecorationColor = textDecorationColor.value;
+    textDecorationColorAnswer.innerHTML = textDecorationColor.value;
+};
+
+textDecorationColor.addEventListener('input', changeTextDecorationColor);
+
+for (let checkbox of textDecorationCheckboxes) {
+    checkbox.addEventListener('change', changeTextDecoration);
+};
+
+function changeTextDecirationStyle () {
+    text.style.textDecorationStyle = textDecorationStyle.value;
+    textDecorationStyleAnswer.innerHTML = textDecorationStyle.value;
+};
+
+textDecorationStyle.addEventListener('change', changeTextDecirationStyle);
+
+function changeTextShadow () {
+    for (let input of textShadowInputs) {
+        input.nextElementSibling.innerHTML = input.value;
+    };
+    let textShadowParams = `${textShadowOffsetX.value}px ${textShadowOffsetY.value}px ${textShadowBlur.value}px ${textShadowColor.value}`;
+    text.style.textShadow = textShadowParams;
+    textShadowAnswer.innerHTML = textShadowParams;
+
+};
+
+for(let input of textShadowInputs) {
+    input.addEventListener('input', changeTextShadow);
+};
+
+textShadowColor.addEventListener('input', changeTextShadow);
+
+for (let elem of textShadowManualInputs) {
+    elem.previousElementSibling.onclick = function () {
+        enableManualInput(elem);
+    };
+};
+
+for (let elem of textShadowManualInputs) {
+    elem.onblur = function () {
+        disableManualInput(elem)
+        changeTextShadow();
+    };
+
+    elem.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+        if (key == 13) {
+            disableManualInput(elem);
+            changeTextShadow();
+        };
+    });
+};
+
+
 

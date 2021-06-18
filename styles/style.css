@@ -100,6 +100,7 @@ input[type="checkbox"] {
 
 .main-content__canvas__text {
     font-size: 48px;
+    font-weight: 400;
     text-align: center;
     margin-top: 20%;
 }
@@ -207,7 +208,8 @@ input[type="range"] {
 .manual-radius-inputs,
 .shadow-manual-inputs,
 .border-manual-input,
-.outline-manual-input {
+.outline-manual-input,
+.text-shadow-manual-input {
     width: 50px;
     display: inline-block;
 }
@@ -219,7 +221,8 @@ input[type="range"] {
 .square-border-radius+span,
 .box-shadow-input+span,
 .block-border-range+span,
-#block-outline-width+span {
+#block-outline-width+span,
+.text-shadow-input+span {
     cursor: pointer;
 }
 

@@ -355,20 +355,34 @@
                             <div class="accordeon__item__title">Text decoration</div>
                             <div class="accordeon__item__content disabled">
                                 <p>
-                                    <select name="text decoration" id="">
-                                        <option value="none">none</option>
-                                        <option value="line-through">line-through</option>
-                                        <option value="overline">overline</option>
-                                        <option value="underline">underline</option>
-                                    </select>
+                                    <input 
+                                    type="checkbox" 
+                                    name="text-decoration-line-through" 
+                                    id="text-decoration-line-through"
+                                    class="text-decoration-checkbox">
+                                    <label for="text-decoration-line-through">Line through</label>
+
+                                    <input 
+                                    type="checkbox" 
+                                    name="text-decoration-overline" 
+                                    id="text-decoration-overline"
+                                    class="text-decoration-checkbox">
+                                    <label for="text-decoration-overline">Overline</label>
+
+                                    <input 
+                                    type="checkbox" 
+                                    name="text-decoration-underline" 
+                                    id="text-decoration-underline"
+                                    class="text-decoration-checkbox">
+                                    <label for="text-decoration-underline">Underline</label>
                                 </p>
                                 <p>
                                     Color
-                                    <input type="color" name="" id="">
+                                    <input type="color" name="text-decoration-color" id="text-decoration-color">
                                 </p>
                                 <p>
                                     Style
-                                    <select name="text-decoration-style" id="">
+                                    <select name="text-decoration-style" id="text-decoration-style">
                                         <option value="solid">solid</option>
                                         <option value="double">double</option>
                                         <option value="dotted">dotted</option>
@@ -381,25 +395,64 @@
                         <div class="accordeon__item text-shadow">
                             <div class="accordeon__item__title">Text shadow</div>
                             <div class="accordeon__item__content disabled">
-                                <p>
-                                    Color
-                                    <input type="color" name="" id="">
-                                </p>
+                                
                                 <p>
                                     Offset x<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="text-shadow-offset-x" 
+                                    id="text-shadow-offset-x"
+                                    class="text-shadow-input"
+                                    min="-200" 
+                                    max="200" 
+                                    value="0">
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="offset-x-ts-manual-input" 
+                                    class="text-shadow-manual-input disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Offset y<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="text-shadow-offset-y" 
+                                    id="text-shadow-offset-y" 
+                                    class="text-shadow-input"
+                                    min="-200" 
+                                    max="200" 
+                                    value="0">
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="offset-y-ts-manual-input" 
+                                    class="text-shadow-manual-input disabled"
+                                    min="0">
                                 </p>
                                 <p>
                                     Blur radius<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    <input 
+                                    type="range" 
+                                    name="text-shadow-blur" 
+                                    id="text-shadow-blur" 
+                                    class="text-shadow-input"
+                                    min="0" 
+                                    max="100" 
+                                    value="0">
+                                    <span>0</span>
+                                    <input 
+                                    type="number" 
+                                    name="blur-ts-manual-input" 
+                                    class="text-shadow-manual-input disabled"
+                                    min="0">
                                 </p>
                                 <p>
-                                    Spread radius<br>
-                                    <input type="range" name="" id="" min="-100" max="100" value="0"><span>0</span>
+                                    Color
+                                    <input 
+                                    type="color" 
+                                    name="text-shadow-color" 
+                                    id="text-shadow-color">
                                 </p>
                             </div>
                         </div>
@@ -480,10 +533,16 @@
                             </select>
                         </p>
                         <p>Font weight:
-                            <select name="" id="">
-                                <option value="normal">Normal</option>
-                                <option value="italic">Bold</option>
-                                <option value="oblique">Lighter</option>
+                            <select name="font-weight" id="font-weight">
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                                <option value="600">600</option>
+                                <option value="700">700</option>
+                                <option value="800">800</option>
+                                <option value="900">900</option>
                             </select>
                         </p>
                         <p>Font family:
@@ -507,8 +566,12 @@
                     <div class="main-content__answer__text">
                         <p>color: <span id="text-color-answer">#000000</span>;</p>
                         <p>font-size: <span id="font-size-answer">48</span>px;</p>
-                        <p>text-decoration: none;</p>
-                        <p>text-shadow: none;</p>
+                        <p>font-style: <span id="font-style-answer">normal</span>;</p>
+                        <p>font-weight: <span id="font-weight-answer">400</span>;</p>
+                        <p>text-decoration: <span id="text-decoration-answer">none</span>;</p>
+                        <p>text-decoration-color: <span id="text-decoration-color-answer">#000000</span>;</p>
+                        <p>text-decoration-style: <span id="text-decoration-style-answer">solid</span>;</p>
+                        <p>text-shadow: <span id="text-shadow-answer">none</span>;</p>
                         <p>text-transform: none;</p>
                         <p>border: none;</p>
                     </div>
