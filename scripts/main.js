@@ -275,8 +275,8 @@ fontWeight.addEventListener('change', changeFontWeight);
 
 function changeTextDecoration() {
 
-    let textDecorationParams = 
-    `${textDecorationLineThrough.checked ? 'line-through' : ''}
+    let textDecorationParams =
+        `${textDecorationLineThrough.checked ? 'line-through' : ''}
      ${textDecorationOverline.checked ? 'overline' : ''}
      ${textDecorationUnderline.checked ? 'underline' : ''}`;
 
@@ -290,7 +290,7 @@ function changeTextDecoration() {
     };
 };
 
-function changeTextDecorationColor () {
+function changeTextDecorationColor() {
     text.style.textDecorationColor = textDecorationColor.value;
     textDecorationColorAnswer.innerHTML = textDecorationColor.value;
 };
@@ -301,14 +301,14 @@ for (let checkbox of textDecorationCheckboxes) {
     checkbox.addEventListener('change', changeTextDecoration);
 };
 
-function changeTextDecirationStyle () {
+function changeTextDecirationStyle() {
     text.style.textDecorationStyle = textDecorationStyle.value;
     textDecorationStyleAnswer.innerHTML = textDecorationStyle.value;
 };
 
 textDecorationStyle.addEventListener('change', changeTextDecirationStyle);
 
-function changeTextShadow () {
+function changeTextShadow() {
     for (let input of textShadowInputs) {
         input.nextElementSibling.innerHTML = input.value;
     };
@@ -318,7 +318,7 @@ function changeTextShadow () {
 
 };
 
-for(let input of textShadowInputs) {
+for (let input of textShadowInputs) {
     input.addEventListener('input', changeTextShadow);
 };
 
@@ -345,5 +345,58 @@ for (let elem of textShadowManualInputs) {
     });
 };
 
+function transformText() {
+    text.style.textTransform = textTransform.value;
+    textTransformAnswer.innerHTML = textTransform.value;
+};
 
+textTransform.addEventListener('change', transformText);
+
+//подумать как можно переделать этот кусок кода
+
+for (let input of textBorderInputs) {
+    input.oninput = function () {
+        input.nextElementSibling.innerHTML = input.value;
+    };
+};
+
+function changeTextBorders(input) {
+    return `${input.value}px ${textBorderStyle.value} ${textBorderColor.value}`;
+};
+
+function changeTopTextBorder() {
+    text.style.borderTop = changeTextBorders(topTextBorder);
+};
+topTextBorder.addEventListener('input', changeTopTextBorder);
+
+function changeRightTextBorder() {
+    text.style.borderRight = changeTextBorders(rightTextBorder);
+};
+rightTextBorder.addEventListener('input', changeRightTextBorder);
+
+function changeBottomTextBorder() {
+    text.style.borderBottom = changeTextBorders(bottomTextBorder);
+};
+bottomTextBorder.addEventListener('input', changeBottomTextBorder);
+
+function changeLeftTextBorder() {
+    text.style.borderLeft = changeTextBorders(leftTextBorder);
+};
+leftTextBorder.addEventListener('input', changeLeftTextBorder);
+
+textBorderStyle.onchange = function () {
+    changeTopTextBorder();
+    changeRightTextBorder();
+    changeBottomTextBorder();
+    changeLeftTextBorder(); 
+};
+
+textBorderColor.oninput = function () {
+    changeTopTextBorder();
+    changeRightTextBorder();
+    changeBottomTextBorder();
+    changeLeftTextBorder();
+};
+
+//подумать как можно переделать этот кусок кода
 

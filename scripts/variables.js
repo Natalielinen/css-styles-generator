@@ -122,6 +122,22 @@ const textShadowManualInputs = document.querySelectorAll('.text-shadow-manual-in
 
 const textShadowAnswer = document.getElementById('text-shadow-answer');
 
+const textTransform = document.getElementById('text-transform');
+const textTransformAnswer = document.getElementById('text-transform-answer');
+
+const topTextBorder = document.getElementById('top-text-border');
+const rightTextBorder = document.getElementById('right-text-border');
+const bottomTextBorder = document.getElementById('bottom-text-border');
+const leftTextBorder = document.getElementById('left-text-border');
+const textBorderInputs = document.querySelectorAll('.text-border');
+
+const textBorderStyle = document.getElementById('text-border-style');
+const textBorderColor = document.getElementById('text-border-color');
+
+
+
+
+
 
 
 
