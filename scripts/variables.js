@@ -134,6 +134,21 @@ const textBorderInputs = document.querySelectorAll('.text-border');
 const textBorderStyle = document.getElementById('text-border-style');
 const textBorderColor = document.getElementById('text-border-color');
 
+const manualTextBorderInputs = document.querySelectorAll('.text-border-manual-input');
+
+const allTextBordersAnswer = document.getElementById('all-text-borders-answer');
+const topTextBorderAnswer = document.getElementById('top-text-borders-answer');
+const rightTextBorderAnswer = document.getElementById('right-text-borders-answer');
+const bottomTextBorderAnswer = document.getElementById('bottom-text-borders-answer');
+const leftTextBorderAnswer = document.getElementById('left-text-borders-answer');
+
+const topTextBordersAnswerCont = document.getElementById('top-text-border-answer-cont');
+const rightTextBordersAnswerCont = document.getElementById('right-text-border-answer-cont');
+const bottomTextBordersAnswerCont = document.getElementById('bottom-text-border-answer-cont');
+const leftTextBordersAnswerCont = document.getElementById('left-text-border-answer-cont');
+const allTextBordersAnswerCont = document.getElementById('all-text-borders-answer-cont');
+
+
 
 
 

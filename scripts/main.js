@@ -352,7 +352,7 @@ function transformText() {
 
 textTransform.addEventListener('change', transformText);
 
-//подумать как можно переделать этот кусок кода
+//подумать как можно переделать этот кусок кода (начало)
 
 for (let input of textBorderInputs) {
     input.oninput = function () {
@@ -364,23 +364,33 @@ function changeTextBorders(input) {
     return `${input.value}px ${textBorderStyle.value} ${textBorderColor.value}`;
 };
 
+function getAnswer (answerCont, answer, border) {
+    allTextBordersAnswerCont.classList.add('disabled');
+    answerCont.classList.remove('disabled');
+    answer.innerHTML = `${border.value}px ${textBorderStyle.value} ${textBorderColor.value}`;
+};
+
 function changeTopTextBorder() {
     text.style.borderTop = changeTextBorders(topTextBorder);
+    getAnswer(topTextBordersAnswerCont, topTextBorderAnswer, topTextBorder);
 };
 topTextBorder.addEventListener('input', changeTopTextBorder);
 
 function changeRightTextBorder() {
     text.style.borderRight = changeTextBorders(rightTextBorder);
+    getAnswer(rightTextBordersAnswerCont, rightTextBorderAnswer, rightTextBorder);
 };
 rightTextBorder.addEventListener('input', changeRightTextBorder);
 
 function changeBottomTextBorder() {
     text.style.borderBottom = changeTextBorders(bottomTextBorder);
+    getAnswer(bottomTextBordersAnswerCont, bottomTextBorderAnswer, bottomTextBorder);
 };
 bottomTextBorder.addEventListener('input', changeBottomTextBorder);
 
 function changeLeftTextBorder() {
     text.style.borderLeft = changeTextBorders(leftTextBorder);
+    getAnswer(leftTextBordersAnswerCont, leftTextBorderAnswer, leftTextBorder);
 };
 leftTextBorder.addEventListener('input', changeLeftTextBorder);
 
@@ -398,5 +408,33 @@ textBorderColor.oninput = function () {
     changeLeftTextBorder();
 };
 
-//подумать как можно переделать этот кусок кода
+//подумать как можно переделать этот кусок кода (конец)
+
+for (let elem of manualTextBorderInputs) {
+    elem.previousElementSibling.onclick = function () {
+        enableManualInput(elem);
+    };
+};
+
+for (let elem of manualTextBorderInputs) {
+    elem.onblur = function () {
+        disableManualInput(elem)
+        changeTopTextBorder();
+        changeRightTextBorder();
+        changeBottomTextBorder();
+        changeLeftTextBorder(); 
+    };
+
+    elem.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+        if (key == 13) {
+            disableManualInput(elem);
+            changeTextShadow();
+        };
+    });
+};
+
+
+
+
 

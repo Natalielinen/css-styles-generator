@@ -338,21 +338,47 @@
                                     Top<br>
                                     <input type="range" name="top-text-border" id="top-text-border" class="text-border" value="0">
                                     <span>0</span>
+                                    <input type="number" name="top-text-border-manual-input" class="text-border-manual-input disabled" min="0">
+                                    <div class="text-borders-customization">
+                                        <p>
+                                            Border style<br>
+                                    <select name="text-border-style" id="text-border-style">
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="solid">solid</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                        </p>
+                                        <p>
+                                            Color<br>
+                                            <input type="color" name="text-border-color" id="text-border-color"> 
+                                        </p>
+                                    </div>
                                 </p>
+
                                 <p>
                                     Right<br>
                                     <input type="range" name="right-text-border" id="right-text-border" class="text-border" value="0">
                                     <span>0</span>
+                                    <input type="number" name="right-text-border-manual-input" class="text-border-manual-input disabled" min="0">
                                 </p>
+
                                 <p>
                                     Bottom<br>
                                     <input type="range" name="bottom-text-border" id="bottom-text-border" class="text-border" value="0">
                                     <span>0</span>
+                                    <input type="number" name="bottom-text-border-manual-input" class="text-border-manual-input disabled" min="0">
                                 </p>
+
                                 <p>
                                     Left<br>
                                     <input type="range" name="left-text-border" id="left-text-border" class="text-border" value="0">
                                     <span>0</span>
+                                    <input type="number" name="left-text-border-manual-input" class="text-border-manual-input disabled" min="0">
                                 </p>
 
                                 <p>
@@ -368,6 +394,7 @@
                                         <option value="outset">outset</option>
                                     </select>
                                 </p>
+
                                 <p>
                                     Color<br>
                                     <input type="color" name="text-border-color" id="text-border-color">
@@ -390,7 +417,7 @@
                             <input type="color" name="text-color" id="text-color">
                         </p>
                         <p>Font size:
-                            <input type="number" name="font-size" id="font-size" min="1">
+                            <input type="number" name="font-size" id="font-size" min="1" value="48">
                         </p>
                         <p>Font style:
                             <select name="font-style" id="font-style">
@@ -440,7 +467,11 @@
                         <p>text-decoration-style: <span id="text-decoration-style-answer">solid</span>;</p>
                         <p>text-shadow: <span id="text-shadow-answer">none</span>;</p>
                         <p>text-transform: <span id="text-transform-answer">none</span>;</p>
-                        <p>border: none;</p>
+                        <p id="all-text-borders-answer-cont">border: <span id="all-text-borders-answer">none</span>;</p>
+                        <p class="disabled" id="top-text-border-answer-cont">border-top: <span id="top-text-borders-answer">none</span>;</p>
+                        <p class="disabled" id="right-text-border-answer-cont">border-right: <span id="right-text-borders-answer">none</span>;</p>
+                        <p class="disabled" id="bottom-text-border-answer-cont">border-bottom: <span id="bottom-text-borders-answer">none</span>;</p>
+                        <p class="disabled" id="left-text-border-answer-cont">border-left: <span id="left-text-borders-answer">none</span>;</p>
                     </div>
                     <!--End of text answers-->
 

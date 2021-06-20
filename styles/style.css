@@ -209,7 +209,8 @@ input[type="range"] {
 .shadow-manual-inputs,
 .border-manual-input,
 .outline-manual-input,
-.text-shadow-manual-input {
+.text-shadow-manual-input,
+.text-border-manual-input {
     width: 50px;
     display: inline-block;
 }
@@ -222,7 +223,12 @@ input[type="range"] {
 .box-shadow-input+span,
 .block-border-range+span,
 #block-outline-width+span,
-.text-shadow-input+span {
+.text-shadow-input+span,
+.text-border+span {
     cursor: pointer;
+}
+
+.text-borders-customization {
+    display: flex;
 }
 
