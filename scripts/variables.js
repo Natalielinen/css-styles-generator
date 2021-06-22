@@ -126,13 +126,23 @@ const textTransform = document.getElementById('text-transform');
 const textTransformAnswer = document.getElementById('text-transform-answer');
 
 const topTextBorder = document.getElementById('top-text-border');
-const rightTextBorder = document.getElementById('right-text-border');
-const bottomTextBorder = document.getElementById('bottom-text-border');
-const leftTextBorder = document.getElementById('left-text-border');
-const textBorderInputs = document.querySelectorAll('.text-border');
+const topTextBorderStyle = document.getElementById('top-text-border-style');
+const topTextBorderColor = document.getElementById('text-border-color');
 
-const textBorderStyle = document.getElementById('text-border-style');
-const textBorderColor = document.getElementById('text-border-color');
+const rightTextBorder = document.getElementById('right-text-border');
+const rightTextBorderStyle = document.getElementById('right-text-border-style');
+const rightTextBorderColor = document.getElementById('right-text-border-color');
+
+
+const bottomTextBorder = document.getElementById('bottom-text-border');
+const bottomTextBorderStyle = document.getElementById('bottom-text-border-style');
+const bottomTextBorderColor = document.getElementById('bottom-text-border-color');
+
+const leftTextBorder = document.getElementById('left-text-border');
+const leftTextBorderStyle = document.getElementById('left-text-border-style');
+const leftTextBorderColor = document.getElementById('left-text-border-color');
+
+const textBorderInputs = document.querySelectorAll('.text-border');
 
 const manualTextBorderInputs = document.querySelectorAll('.text-border-manual-input');
 

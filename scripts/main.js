@@ -360,53 +360,48 @@ for (let input of textBorderInputs) {
     };
 };
 
-function changeTextBorders(input) {
-    return `${input.value}px ${textBorderStyle.value} ${textBorderColor.value}`;
+function changeTextBorders(input, style, color) {
+    return `${input.value}px ${style.value} ${color.value}`;
 };
 
-function getAnswer (answerCont, answer, border) {
+function getAnswer (answerCont, answer, border, borderStyle, borderColor) {
     allTextBordersAnswerCont.classList.add('disabled');
     answerCont.classList.remove('disabled');
-    answer.innerHTML = `${border.value}px ${textBorderStyle.value} ${textBorderColor.value}`;
+    answer.innerHTML = `${border.value}px ${borderStyle.value} ${borderColor.value}`;
 };
 
 function changeTopTextBorder() {
-    text.style.borderTop = changeTextBorders(topTextBorder);
-    getAnswer(topTextBordersAnswerCont, topTextBorderAnswer, topTextBorder);
+    text.style.borderTop = changeTextBorders(topTextBorder, topTextBorderStyle, topTextBorderColor);
+    getAnswer(topTextBordersAnswerCont, topTextBorderAnswer, topTextBorder, topTextBorderStyle, topTextBorderColor);
 };
 topTextBorder.addEventListener('input', changeTopTextBorder);
+topTextBorderStyle.addEventListener('change', changeTopTextBorder);
+topTextBorderColor.addEventListener('input', changeTopTextBorder);
+
 
 function changeRightTextBorder() {
-    text.style.borderRight = changeTextBorders(rightTextBorder);
-    getAnswer(rightTextBordersAnswerCont, rightTextBorderAnswer, rightTextBorder);
+    text.style.borderRight = changeTextBorders(rightTextBorder, rightTextBorderStyle, rightTextBorderColor);
+    getAnswer(rightTextBordersAnswerCont, rightTextBorderAnswer, rightTextBorder, rightTextBorderStyle, rightTextBorderColor);
 };
 rightTextBorder.addEventListener('input', changeRightTextBorder);
+rightTextBorderStyle.addEventListener('change', changeRightTextBorder);
+rightTextBorderColor.addEventListener('input', changeRightTextBorder);
 
 function changeBottomTextBorder() {
-    text.style.borderBottom = changeTextBorders(bottomTextBorder);
-    getAnswer(bottomTextBordersAnswerCont, bottomTextBorderAnswer, bottomTextBorder);
+    text.style.borderBottom = changeTextBorders(bottomTextBorder, bottomTextBorderStyle, bottomTextBorderColor);
+    getAnswer(bottomTextBordersAnswerCont, bottomTextBorderAnswer, bottomTextBorder, bottomTextBorderStyle, bottomTextBorderColor);
 };
 bottomTextBorder.addEventListener('input', changeBottomTextBorder);
+bottomTextBorderStyle.addEventListener('change', changeBottomTextBorder);
+bottomTextBorderColor.addEventListener('input', changeBottomTextBorder);
 
 function changeLeftTextBorder() {
-    text.style.borderLeft = changeTextBorders(leftTextBorder);
-    getAnswer(leftTextBordersAnswerCont, leftTextBorderAnswer, leftTextBorder);
+    text.style.borderLeft = changeTextBorders(leftTextBorder, leftTextBorderStyle, leftTextBorderColor);
+    getAnswer(leftTextBordersAnswerCont, leftTextBorderAnswer, leftTextBorder, leftTextBorderStyle, leftTextBorderColor);
 };
 leftTextBorder.addEventListener('input', changeLeftTextBorder);
-
-textBorderStyle.onchange = function () {
-    changeTopTextBorder();
-    changeRightTextBorder();
-    changeBottomTextBorder();
-    changeLeftTextBorder(); 
-};
-
-textBorderColor.oninput = function () {
-    changeTopTextBorder();
-    changeRightTextBorder();
-    changeBottomTextBorder();
-    changeLeftTextBorder();
-};
+leftTextBorderStyle.addEventListener('change', changeLeftTextBorder);
+leftTextBorderColor.addEventListener('input', changeLeftTextBorder);
 
 //подумать как можно переделать этот кусок кода (конец)
 

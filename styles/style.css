@@ -232,3 +232,12 @@ input[type="range"] {
     display: flex;
 }
 
+.text-borders-block {
+    margin-top: 10px;
+}
+
+.text-borders-block p {
+    margin: 0;
+
+}
+

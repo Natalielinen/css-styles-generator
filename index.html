@@ -334,15 +334,16 @@
                         <div class="accordeon__item border-text">
                             <div class="accordeon__item__title">Border</div>
                             <div class="accordeon__item__content disabled">
-                                <p>
-                                    Top<br>
+                                <div class="text-borders-block">
+                                    <p> Top<br>
                                     <input type="range" name="top-text-border" id="top-text-border" class="text-border" value="0">
                                     <span>0</span>
                                     <input type="number" name="top-text-border-manual-input" class="text-border-manual-input disabled" min="0">
+                                    </p>
                                     <div class="text-borders-customization">
                                         <p>
-                                            Border style<br>
-                                    <select name="text-border-style" id="text-border-style">
+                                            Style<br>
+                                    <select name="top-text-border-style" id="top-text-border-style">
                                         <option value="dotted">dotted</option>
                                         <option value="dashed">dashed</option>
                                         <option value="solid">solid</option>
@@ -358,32 +359,18 @@
                                             <input type="color" name="text-border-color" id="text-border-color"> 
                                         </p>
                                     </div>
-                                </p>
-
-                                <p>
-                                    Right<br>
-                                    <input type="range" name="right-text-border" id="right-text-border" class="text-border" value="0">
-                                    <span>0</span>
-                                    <input type="number" name="right-text-border-manual-input" class="text-border-manual-input disabled" min="0">
-                                </p>
-
-                                <p>
-                                    Bottom<br>
-                                    <input type="range" name="bottom-text-border" id="bottom-text-border" class="text-border" value="0">
-                                    <span>0</span>
-                                    <input type="number" name="bottom-text-border-manual-input" class="text-border-manual-input disabled" min="0">
-                                </p>
-
-                                <p>
-                                    Left<br>
-                                    <input type="range" name="left-text-border" id="left-text-border" class="text-border" value="0">
-                                    <span>0</span>
-                                    <input type="number" name="left-text-border-manual-input" class="text-border-manual-input disabled" min="0">
-                                </p>
-
-                                <p>
-                                    Border style<br>
-                                    <select name="text-border-style" id="text-border-style">
+                                </div>
+                                <div class="text-borders-block">
+                                    <p>
+                                        Right<br>
+                                        <input type="range" name="right-text-border" id="right-text-border" class="text-border" value="0">
+                                        <span>0</span>
+                                        <input type="number" name="right-text-border-manual-input" class="text-border-manual-input disabled" min="0">
+                                    </p>
+                                    <div class="text-borders-customization">
+                                        <p>
+                                            Style<br>
+                                    <select name="right-text-border-style" id="right-text-border-style">
                                         <option value="dotted">dotted</option>
                                         <option value="dashed">dashed</option>
                                         <option value="solid">solid</option>
@@ -393,12 +380,71 @@
                                         <option value="inset">inset</option>
                                         <option value="outset">outset</option>
                                     </select>
-                                </p>
+                                        </p>
+                                        <p>
+                                            Color<br>
+                                            <input type="color" name="right-text-border-color" id="right-text-border-color"> 
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-borders-block">
+                                    <p>
+                                        Bottom<br>
+                                        <input type="range" name="bottom-text-border" id="bottom-text-border" class="text-border" value="0">
+                                        <span>0</span>
+                                        <input type="number" name="bottom-text-border-manual-input" class="text-border-manual-input disabled" min="0">
+                                    </p>
+                                    <div class="text-borders-customization">
+                                        <p>
+                                            Style<br>
+                                    <select name="bottom-text-border-style" id="bottom-text-border-style">
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="solid">solid</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                        </p>
+                                        <p>
+                                            Color<br>
+                                            <input type="color" name="bottom-text-border-color" id="bottom-text-border-color"> 
+                                        </p>
+                                    </div>
 
-                                <p>
-                                    Color<br>
-                                    <input type="color" name="text-border-color" id="text-border-color">
-                                </p>
+                                </div>
+                                
+                                <div class="text-borders-block">
+                                    <p>
+                                        Left<br>
+                                        <input type="range" name="left-text-border" id="left-text-border" class="text-border" value="0">
+                                        <span>0</span>
+                                        <input type="number" name="left-text-border-manual-input" class="text-border-manual-input disabled" min="0">
+                                    </p>
+                                    <div class="text-borders-customization">
+                                        <p>
+                                            Style<br>
+                                    <select name="left-text-border-style" id="left-text-border-style">
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="solid">solid</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                        </p>
+                                        <p>
+                                            Color<br>
+                                            <input type="color" name="left-text-border-color" id="left-text-border-color"> 
+                                        </p>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
