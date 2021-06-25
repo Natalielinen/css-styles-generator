@@ -365,9 +365,46 @@ function changeTextBorders(input, style, color) {
 };
 
 function getAnswer (answerCont, answer, border, borderStyle, borderColor) {
+    let textBorderAnswersContainers = [
+        topTextBordersAnswerCont,
+        rightTextBordersAnswerCont,
+        bottomTextBordersAnswerCont,
+        leftTextBordersAnswerCont
+    ];
+
     allTextBordersAnswerCont.classList.add('disabled');
     answerCont.classList.remove('disabled');
     answer.innerHTML = `${border.value}px ${borderStyle.value} ${borderColor.value}`;
+    if(topTextBorder.value == 0 && rightTextBorder.value == 0 && bottomTextBorder.value == 0 && leftTextBorder.value == 0) {
+        for(let borderCont of textBorderAnswersContainers) {
+            borderCont.classList.add('disabled');
+        };
+        allTextBordersAnswerCont.classList.remove('disabled');
+    }; 
+
+    if(
+        topTextBorder.value ==  rightTextBorder.value &&
+        topTextBorder.value ==  bottomTextBorder.value &&
+        topTextBorder.value ==  leftTextBorder.value &&
+        topTextBorderStyle.value == rightTextBorderStyle.value &&
+        topTextBorderStyle.value == bottomTextBorderStyle.value &&
+        topTextBorderStyle.value == leftTextBorderStyle.value &&
+        topTextBorderColor.value == rightTextBorderColor.value &&
+        topTextBorderColor.value == bottomTextBorderColor.value &&
+        topTextBorderColor.value == leftTextBorderColor.value
+    ) {
+        for(let borderCont of textBorderAnswersContainers) {
+            borderCont.classList.add('disabled');
+        };
+        allTextBordersAnswerCont.classList.remove('disabled');
+        allTextBordersAnswer.innerHTML = `${topTextBorder.value}px ${topTextBorderStyle.value} ${topTextBorderColor.value}`;
+    } else {
+        allTextBordersAnswerCont.classList.add('disabled');
+        for(let borderCont of textBorderAnswersContainers) {
+            borderCont.classList.remove('disabled');
+        };
+        
+    }
 };
 
 function changeTopTextBorder() {
@@ -377,6 +414,7 @@ function changeTopTextBorder() {
 topTextBorder.addEventListener('input', changeTopTextBorder);
 topTextBorderStyle.addEventListener('change', changeTopTextBorder);
 topTextBorderColor.addEventListener('input', changeTopTextBorder);
+
 
 
 function changeRightTextBorder() {
@@ -428,8 +466,5 @@ for (let elem of manualTextBorderInputs) {
         };
     });
 };
-
-
-
 
 
