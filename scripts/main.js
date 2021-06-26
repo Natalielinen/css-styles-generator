@@ -1,12 +1,27 @@
-/* Choose canvas */
+/* Variables */
+
+// Page toolbar
+
+const canvasTrigger = document.querySelector('#canvas-trigger');
+const figureCanvas = document.querySelector('.figure-canvas');
+const textCanvas = document.querySelector('.text-canvas');
+
+// Accordeon
+
+const accordeonItemsTitles = document.querySelectorAll('.accordeon__item__title');
+const accordeonItemsContent = document.querySelectorAll('.accordeon__item__content');
+
+/* Functions */
+
+// Choose canvas
+
 function toggleCanvas() {
     figureCanvas.classList.toggle('disabled');
     textCanvas.classList.toggle('disabled');
 };
-
 canvasTrigger.addEventListener('change', toggleCanvas);
 
-/* Accordeon */
+// Accordeon
 
 for (let item of accordeonItemsTitles) {
     item.addEventListener('click', function () {
@@ -14,7 +29,8 @@ for (let item of accordeonItemsTitles) {
     });
 };
 
-/* Manual input */
+// Manual inputs
+
 function enableManualInput(manualInput) {
     manualInput.previousElementSibling.classList.add('disabled');
     manualInput.classList.remove('disabled');
@@ -30,95 +46,7 @@ function disableManualInput(manualInput) {
 
 /*** Square customization ***/
 
-/** Top toolbar**/
-
-/* Square color */
-
-function changeSquareColor() {
-    square.style.backgroundColor = squareColor.value;
-    answerColor.innerHTML = squareColor.value;
-}
-
-squareColor.addEventListener('input', changeSquareColor);
-
-/* Square opacity */
-
-function changeOpacity() {
-    square.style.opacity = opacityRange.value;
-    opacityRangeSpan.innerHTML = opacityRange.value;
-    squareAnswerOpacitySpan.innerHTML = opacityRange.value;
-};
-
-opacityRange.addEventListener('input', changeOpacity);
-
-/* Square size */
-
-function changeWidth() {
-    square.style.width = squareWidthInput.value + 'px';
-    squareAnswerWidthSpan.innerHTML = squareWidthInput.value;
-};
-
-function changeHeight() {
-    square.style.height = squareHeightInput.value + 'px';
-    squareAnswerHeightSpan.innerHTML = squareHeightInput.value;
-};
-
-squareWidthInput.addEventListener('input', changeWidth);
-squareHeightInput.addEventListener('input', changeHeight);
-
 /** Side toolbar **/
-
-
-
-/* Border radius* */
-
-function changeRadius() {
-    for (let elem of allRadiusInputs) {
-        elem.nextElementSibling.innerHTML = elem.value;
-    };
-    let borderRadiusParams = topLeftRange.value + 'px ' +
-        topRightRange.value + 'px ' +
-        bottomRightRange.value + 'px ' +
-        bottomLeftRange.value + 'px';
-
-    square.style.borderRadius = borderRadiusParams;
-
-    borderRadiusAnswer.innerHTML = borderRadiusParams;
-
-    if (topLeftRange.value == 0 && topRightRange.value == 0 && bottomRightRange.value == 0 && bottomLeftRange.value == 0) {
-        borderRadiusAnswer.innerHTML = '0';
-    };
-    if (topLeftRange.value == topRightRange.value && topLeftRange.value == bottomRightRange.value && topLeftRange.value == bottomLeftRange.value) {
-        borderRadiusAnswer.innerHTML = topLeftRange.value + 'px';
-    };
-};
-
-for (let elem of allRadiusInputs) {
-    elem.addEventListener('input', changeRadius);
-};
-
-
-
-for (let elem of manualRadiusInputs) {
-    elem.previousElementSibling.onclick = function () {
-        enableManualInput(elem);
-    };
-};
-
-for (let elem of manualRadiusInputs) {
-    elem.onblur = function () {
-        disableManualInput(elem)
-        changeRadius();
-    };
-
-    elem.addEventListener('keydown', (e) => {
-        let key = e.keyCode;
-        if (key == 13) {
-            disableManualInput(elem);
-            changeRadius();
-        };
-    });
-};
 
 /* Box shadow */
 
