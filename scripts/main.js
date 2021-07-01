@@ -1,5 +1,8 @@
 /* Variables */
 
+const square = document.querySelector('.main-content__canvas__square');
+const text = document.querySelector('.main-content__canvas__text');
+
 // Page toolbar
 
 const canvasTrigger = document.querySelector('#canvas-trigger');
@@ -44,114 +47,11 @@ function disableManualInput(manualInput) {
     manualInput.previousElementSibling.previousElementSibling.value = manualInput.value;
 };
 
-/*** Square customization ***/
-
-/** Side toolbar **/
-
-/* Box shadow */
-
-
-
-/* Borders (square) */
-
-function changeAllBorders() {
-    let borderParams = blockBorderWidth.value + 'px ' +
-        blockBorderStyle.value + ' ' +
-        blockBorderColor.value;
-    square.style.border = borderParams;
-    blockBorderWidth.nextElementSibling.innerHTML = blockBorderWidth.value;
-    if (blockBorderWidth.value == 0) {
-        blockBorderAnswer.innerHTML = 'none';
-    } else {
-        blockBorderAnswer.innerHTML = borderParams;
-    };
-};
-
-blockBorderWidth.addEventListener('input', changeAllBorders);
-blockBorderStyle.addEventListener('change', changeAllBorders);
-blockBorderColor.addEventListener('input', changeAllBorders);
-
-borderManualInput.previousElementSibling.onclick = function () {
-    enableManualInput(borderManualInput);
-};
-
-borderManualInput.onblur = function () {
-    disableManualInput(borderManualInput);
-    changeAllBorders();
-};
-
-borderManualInput.addEventListener('keydown', (e) => {
-    let key = e.keyCode;
-    if (key == 13) {
-        disableManualInput(borderManualInput);
-        changeAllBorders();
-    };
-});
-
-/* Outline */
-
-function changeOutline() {
-    blockOutlineWidth.nextElementSibling.innerHTML = blockOutlineWidth.value;
-    let outlineParams = `${blockOutlineWidth.value}px ${blockOutlineStyle.value} ${blockOutlineColor.value}`;
-    square.style.outline = outlineParams;
-    if (blockOutlineWidth.value == 0) {
-        blockOutlineAnswer.innerHTML = 'none';
-    } else {
-        blockOutlineAnswer.innerHTML = outlineParams;
-    };
-};
-
-blockOutlineColor.addEventListener('input', changeOutline);
-blockOutlineStyle.addEventListener('change', changeOutline);
-blockOutlineWidth.addEventListener('input', changeOutline);
-
-outlineManualInput.previousElementSibling.onclick = function () {
-    enableManualInput(outlineManualInput);
-};
-
-outlineManualInput.onblur = function () {
-    disableManualInput(outlineManualInput);
-    changeOutline();
-};
-
-outlineManualInput.addEventListener('keydown', (e) => {
-    let key = e.keyCode;
-    if (key == 13) {
-        disableManualInput(outlineManualInput);
-        changeOutline();
-    };
-});
 
 /**** Text customization ****/
-/* Top toolbar */
 
-function changeTextColor() {
-    text.style.color = textColor.value;
-    textColorAnswer.innerHTML = textColor.value;
-};
 
-textColor.addEventListener('input', changeTextColor);
-
-function changeFontSize() {
-    text.style.fontSize = fontSize.value + 'px';
-    fontSizeAnswer.innerHTML = fontSize.value;
-};
-
-fontSize.addEventListener('input', changeFontSize);
-
-function changeFontStyle() {
-    text.style.fontStyle = fontStyle.value;
-    fontStyleAnswer.innerHTML = fontStyle.value;
-};
-
-fontStyle.addEventListener('change', changeFontStyle);
-
-function changeFontWeight() {
-    text.style.fontWeight = fontWeight.value;
-    fontWeightAnswer.innerHTML = fontWeight.value;
-};
-
-fontWeight.addEventListener('change', changeFontWeight);
+//text sidebar
 
 function changeTextDecoration() {
 

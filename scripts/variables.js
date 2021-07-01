@@ -1,45 +1,7 @@
 
-/* Square variables */
-
-/* Accordeon square side toolbar */
-
-//Square borders
-
-const blockBorderRanges = document.querySelectorAll('.block-border-range');
-
-const blockBorderWidth = document.getElementById('block-border-width');
-const blockBorderStyle = document.getElementById('block-border-style');
-const blockBorderColor = document.getElementById('block-border-color');
-
-const borderManualInput = document.querySelector('.border-manual-input');
-
-const blockBorderAnswer = document.getElementById('block-border-answer');
-
-//Square outline
-
-const blockOutlineColor = document.getElementById('block-outline-color');
-const blockOutlineStyle = document.getElementById('block-outline-style');
-const blockOutlineWidth = document.getElementById('block-outline-width');
-const blockOutlineAnswer = document.getElementById('block-outline-answer');
-const outlineManualInput = document.querySelector('.outline-manual-input');
-
-/* End of square variables */
 
 /* Text variables */
 
-const text = document.querySelector('.main-content__canvas__text');
-
-const textColor = document.getElementById('text-color');
-const textColorAnswer = document.getElementById('text-color-answer');
-
-const fontSize = document.getElementById('font-size');
-const fontSizeAnswer = document.getElementById('font-size-answer');
-
-const fontStyle = document.getElementById('font-style');
-const fontStyleAnswer = document.getElementById('font-style-answer');
-
-const fontWeight = document.getElementById('font-weight');
-const fontWeightAnswer = document.getElementById('font-weight-answer');
 
 /* Text side toolbar */
 const textDecorationCheckboxes = document.querySelectorAll('.text-decoration-checkbox'); //for event listener

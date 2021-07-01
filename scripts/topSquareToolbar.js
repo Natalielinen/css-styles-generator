@@ -3,7 +3,6 @@
 //Square background-color
 
 const squareColor = document.getElementById('square-color');
-const square = document.querySelector('.main-content__canvas__square');
 const answerColor = document.getElementById('background-color');
 
 //Square opacity
