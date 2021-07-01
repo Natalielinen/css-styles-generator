@@ -19,18 +19,22 @@ function changeRadius() {
     for (let elem of allRadiusInputs) {
         elem.nextElementSibling.innerHTML = elem.value;
     };
-    let borderRadiusParams = `${topLeftRange.value}px ${topRightRange.value}px ${bottomRightRange.value}px ${bottomLeftRange.value}px`;
+
+    let topLeft = topLeftRange.value;
+    let topRight = topRightRange.value;
+    let bottomRight = bottomRightRange.value;
+    let bottomLeft  = bottomLeftRange.value;
+
+    let borderRadiusParams = `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
 
     square.style.borderRadius = borderRadiusParams;
 
     borderRadiusAnswer.innerHTML = borderRadiusParams;
 
-    if (topLeftRange.value == 0 && topRightRange.value == 0 && bottomRightRange.value == 0 && bottomLeftRange.value == 0) {
-        borderRadiusAnswer.innerHTML = '0';
+    if (topLeft == topRight && topLeft == bottomRight && topLeft == bottomLeft) {
+        borderRadiusAnswer.innerHTML = `${topLeft}px`;
     };
-    if (topLeftRange.value == topRightRange.value && topLeftRange.value == bottomRightRange.value && topLeftRange.value == bottomLeftRange.value) {
-        borderRadiusAnswer.innerHTML = `${topLeftRange.value}px`;//Попробовать через массив и цикл или switch case
-    };
+
 };
 
 for (let elem of allRadiusInputs) {

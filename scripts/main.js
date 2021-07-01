@@ -50,55 +50,7 @@ function disableManualInput(manualInput) {
 
 /* Box shadow */
 
-function changeBoxShadow() {
 
-    for (let elem of boxShadowInputs) {
-        elem.nextElementSibling.innerHTML = elem.value;
-    };
-
-    let shadowParams = `${insetShadowCheckbox.checked  ? 'inset' : ''} 
-    ${boxShadowOffsetX.value}px 
-    ${boxShadowOffsetY.value}px 
-    ${boxShadowBlur.value}px 
-    ${boxShadowSpread.value}px 
-    ${boxShadowColor.value}`;
-
-    boxShadowAnswer.innerHTML = shadowParams;
-
-    square.style.boxShadow = shadowParams;
-
-    if (boxShadowOffsetX.value == 0 && boxShadowOffsetY.value == 0 && boxShadowBlur.value == 0 && boxShadowSpread.value == 0) {
-        boxShadowAnswer.innerHTML = 'none';
-    };
-};
-
-for (let input of boxShadowInputs) {
-    input.addEventListener('input', changeBoxShadow);
-};
-
-boxShadowColor.addEventListener('input', changeBoxShadow);
-insetShadowCheckbox.addEventListener('change', changeBoxShadow);
-
-for (let elem of shadowManualInputs) {
-    elem.previousElementSibling.onclick = function () {
-        enableManualInput(elem);
-    };
-};
-
-for (let elem of shadowManualInputs) {
-    elem.onblur = function () {
-        disableManualInput(elem);
-        changeBoxShadow();
-    };
-
-    elem.addEventListener('keydown', (e) => {
-        let key = e.keyCode;
-        if (key == 13) {
-            disableManualInput(elem);
-            changeBoxShadow();
-        };
-    });
-};
 
 /* Borders (square) */
 

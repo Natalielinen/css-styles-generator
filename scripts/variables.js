@@ -3,22 +3,6 @@
 
 /* Accordeon square side toolbar */
 
-
-//Box shadow
-
-const insetShadowCheckbox = document.getElementById('inset-box-shadow');
-
-const boxShadowOffsetX = document.getElementById('box-shadow-offset-x');
-const boxShadowOffsetY = document.getElementById('box-shadow-offset-y');
-const boxShadowBlur = document.getElementById('box-shadow-blur');
-const boxShadowSpread = document.getElementById('box-shadow-spread');
-const boxShadowColor = document.getElementById('box-shadow-color');
-const boxShadowInputs = document.querySelectorAll('.box-shadow-input');
-
-const shadowManualInputs = document.querySelectorAll('.shadow-manual-inputs');
-
-const boxShadowAnswer = document.getElementById('box-shadow-answer');
-
 //Square borders
 
 const blockBorderRanges = document.querySelectorAll('.block-border-range');
