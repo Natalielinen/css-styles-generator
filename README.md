@@ -11,3 +11,5 @@ The CSS Style Generator is a project of mine that I developed for the purpose of
 changing the styles of a document with JavaScript. Here you can select text or block, apply different styles to it and 
 see the changes immediately. You can also copy the css-code with the applied styles. Also, the generator helps to 
 visually see the difference between some css-properties (for example, between the border and outline properties).
+
+[css-style-generator](https://natalielinen.github.io/css-styles-generator/)
