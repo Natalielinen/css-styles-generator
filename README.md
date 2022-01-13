@@ -1,15 +1,43 @@
-CSS Styles Generator
+<h1 align="center">Генератор CSS стилей</h1>
 
-Генератор CSS Стилей, является моим проектом, который я разработала с целью практики JavaScript, а конкретно изменения 
-стилей документа посредством JavaScript. Здесь вы можете выбрать текст или блок, применить к нему различные стили и 
-сразу же увидеть изменения. Также можно скопировать css-код с примененными стилями. Также этот генератор помогает 
-наглядно увидеть разницу между некоторыми css-свойствами (например, между свойствами border и outline)
+![CSS Styles Generator](assets/readme-img.png)
 
------------------------------------------------------------------------------------------------------------------------
+<h2 align="center">Описание</h2>
 
-The CSS Style Generator is a project of mine that I developed for the purpose of practicing JavaScript, specifically 
-changing the styles of a document with JavaScript. Here you can select text or block, apply different styles to it and 
-see the changes immediately. You can also copy the css-code with the applied styles. Also, the generator helps to 
-visually see the difference between some css-properties (for example, between the border and outline properties).
+Генератор CSS стилей позволяет применить некоторые css-свойства на текст или блок и сразу увидеть результат.
 
-[css-style-generator](https://natalielinen.github.io/css-styles-generator/)
+<h2 align="center">Как использовать</h2>
+
+Сначала необходимо выбрать выпадающем списке к чему вы будете применять стили: к блоку или тексту.
+
+![Выбирете блок или текст](assets/screenshots/1.jpg)
+
+Далее выбирайте и применяйте свойства из бокового меню
+
+![Выбирете и примените свойство](assets/screenshots/2.jpg)
+
+или из верхнего меню.
+
+![Выбирете и примените свойство](assets/screenshots/3.jpg)
+
+Просто тяните "ползунки" и сразу будет виден результат.
+После того, как вы примените все нужные стили, вы можете их скопировать к себе в код.
+
+![Скопируйте код](assets/screenshots/4.jpg)
+
+<h2 align="center">Технологии</h2>
+
+В этом проекте использовались: 
+* HTML
+* CSS
+* JavaScript
+
+<h2 align="center">Дополнительно</h2>
+
+Этот проект создавался в качестве практики применения css-стилей посредством JavaScript. Некоторые функции,
+такие как выбор стиля страницы или выбор шрифта для текста, пока что недоступны, но я планирую добавить их
+в будущем. Также планируетя полный рефакторинг кода и, возможо, перенос проекта с JS на React.
+
+***
+
+посмотреть и попробовать можно [тут](https://natalielinen.github.io/css-styles-generator/)
