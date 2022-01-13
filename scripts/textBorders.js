@@ -54,6 +54,7 @@ function getAnswer (answerCont, answer, border, borderStyle, borderColor) {
     allTextBordersAnswerCont.classList.add('disabled');
     answerCont.classList.remove('disabled');
     answer.innerHTML = `${border.value}px ${borderStyle.value} ${borderColor.value}`;
+    
     if(topTextBorder.value == 0 && rightTextBorder.value == 0 && bottomTextBorder.value == 0 && leftTextBorder.value == 0) {
         for(let borderCont of textBorderAnswersContainers) {
             borderCont.classList.add('disabled');

@@ -1,7 +1,13 @@
-# css-styles-generator
+CSS Styles Generator
 
-My personal project that I have been supporting and improving to this day. A project is a tool that allows you to quickly apply styles to a block or text and immediately see the result. You can also copy css-styles in a convenient format into your code. This tool will be useful for beginners, as it allows you to visually see the difference between some CSS properties.
+Генератор CSS Стилей, является моим проектом, который я разработала с целью практики JavaScript, а конкретно изменения 
+стилей документа посредством JavaScript. Здесь вы можете выбрать текст или блок, применить к нему различные стили и 
+сразу же увидеть изменения. Также можно скопировать css-код с примененными стилями. Также этот генератор помогает 
+наглядно увидеть разницу между некоторыми css-свойствами (например, между свойствами border и outline)
 
-Мой персональный проект который я поддерживаю и улучшаю до сих пор. Проект представляет собой инструмент позволяющий быстро применить стили к блоку или тексту и сразу же увидеть результат. Также вы можете скопировать css-стили в удобном формате в свой код. Этот инструмент будет полезен новичкам, т. к. позволяет наглядно увидеть разницу между некоторыми css-свойствами.
+-----------------------------------------------------------------------------------------------------------------------
 
-
+The CSS Style Generator is a project of mine that I developed for the purpose of practicing JavaScript, specifically 
+changing the styles of a document with JavaScript. Here you can select text or block, apply different styles to it and 
+see the changes immediately. You can also copy the css-code with the applied styles. Also, the generator helps to 
+visually see the difference between some css-properties (for example, between the border and outline properties).
