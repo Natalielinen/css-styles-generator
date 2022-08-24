@@ -10,7 +10,7 @@ body {
 
 .container {
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
 
 .main-header {
@@ -45,7 +45,7 @@ body {
 
 .main-content__tools-panel {
     width: 18%;
-    min-height: 550px;
+    min-height: calc(100vh - 257px);
     padding: 10px 10px;
     background-color: black;
     border-top: 1px solid #3c3c3c;
